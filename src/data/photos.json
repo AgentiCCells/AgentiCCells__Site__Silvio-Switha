@@ -1,0 +1,131 @@
+{
+ "about": "Photos on this site, with their alt text. Metadata removed; teammates cropped out until they agree to appear.",
+ "photos": [
+  {
+   "file": "/assets/photos/silvio-smile.jpg",
+   "alt": "Silvio Switha smiling, in a black hoodie, at the entrance to the venue",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 812,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-agents-under-policy.jpg",
+   "alt": "Silvio from behind, wearing a black hoodie that reads Agents under policy, RiskMandate, with a QR code",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 804,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-your-ai-has-access.jpg",
+   "alt": "Silvio at a table in a red T-shirt that reads Your AI has access. Does it have permission?",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 963,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-at-the-desk.jpg",
+   "alt": "Silvio at a desk in a red RiskMandate T-shirt, hand on his chin, next to the computer showing his universe",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 858,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/universe-on-screen.jpg",
+   "alt": "An iMac showing Silvio's command centre: the team drawn as a universe of planets and orbiting agents",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 1600,
+   "height": 1257
+  },
+  {
+   "file": "/assets/photos/silvio-at-the-stand.jpg",
+   "alt": "Silvio sitting on a stool at the RiskMandate stand, arms crossed, red T-shirt",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 533,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-at-the-stand-2.jpg",
+   "alt": "Silvio at the RiskMandate stand, both thumbs up",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 503,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-main-stage.jpg",
+   "alt": "Silvio in the arena by the Web Summit main stage, with his badge",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 693,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-at-the-arena.jpg",
+   "alt": "Silvio smiling outside the Web Summit arena, with his lanyard",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 583,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-backstage.jpg",
+   "alt": "Silvio leaning forward, smiling, in a black top, backstage at Web Summit",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 559,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-arrival.jpg",
+   "alt": "Silvio standing in a car park in Lisbon, in a black jacket",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 622,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/silvio-at-work-lunch.jpg",
+   "alt": "Silvio at a café table in a black T-shirt",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 725,
+   "height": 1600
+  },
+  {
+   "file": "/assets/photos/know-the-reach-in-the-car.jpg",
+   "alt": "A car dashboard screen playing Know the Reach by RiskMandate",
+   "caption": "",
+   "credit": "Supplied by Dinis Cruz, 2026-11-16; teammates cropped out",
+   "date": "2026-11",
+   "width": 1600,
+   "height": 1200
+  },
+  {
+   "file": "/assets/photos/know-the-reach-cover.jpg",
+   "alt": "The cover of Know the Reach: a glowing square of light over Lisbon at night, under a storm",
+   "caption": "",
+   "credit": "Cover art for Know the Reach, supplied by Dinis Cruz, 2026-11-16",
+   "date": "2026-11",
+   "width": 1254,
+   "height": 1254
+  }
+ ]
+}

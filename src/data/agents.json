@@ -1,0 +1,126 @@
+{
+ "about": "Silvio Switha's AI agents at Web Summit 2026, as listed on his public dashboard. Agent names on the source have the form role@project.silvio.",
+ "source": "https://web-summit.sgit.ai/people/silvio/index.md",
+ "read": "2026-11-16",
+ "total": 17,
+ "running": 13,
+ "commits_total": 341,
+ "commits_note": "Commits by each agent as the dashboard counted them on 2026-11-16. The Ten days at Web Summit article counts 320 commits by his agents on the team's site.",
+ "talks_to": [
+  "Dinis Cruz and his agents (conductor, newsroom, security, dev)",
+  "the conductors of other teammates"
+ ],
+ "talks_to_note": "This site names no teammate other than Dinis Cruz.",
+ "groups": {
+  "lead": "Leads the team",
+  "build": "Builds the products",
+  "creative": "Video, design and words",
+  "growth": "Outreach and CRM",
+  "operations": "Operations and buying",
+  "safeguards": "Security and vaults"
+ },
+ "agents": [
+  {
+   "role": "conductor",
+   "does": "conducts his agents and keeps his records",
+   "commits": 75,
+   "group": "lead"
+  },
+  {
+   "role": "dashboard",
+   "does": "his command centre (UNIVERSO, X-Ray, Gravity), his dashboard and its links",
+   "commits": 62,
+   "group": "build"
+  },
+  {
+   "role": "procurement",
+   "does": "what the team buys: the merch print order; finds suppliers, drafts every message for him to send",
+   "commits": 59,
+   "group": "operations"
+  },
+  {
+   "role": "dev",
+   "does": "the team CRM's features and the site's tools",
+   "commits": 40,
+   "group": "build"
+  },
+  {
+   "role": "video",
+   "does": "the video pipeline to YouTube, Instagram, LinkedIn and the team site: titles, descriptions, shot lists, storyboards; he publishes",
+   "commits": 32,
+   "group": "creative"
+  },
+  {
+   "role": "outreach",
+   "does": "targets, messages and follow-ups for the 50 target companies; he sends every email",
+   "commits": 27,
+   "group": "growth"
+  },
+  {
+   "role": "crm",
+   "does": "keeps his outreach in the team CRM, with a morning summary in Portuguese; sends nothing",
+   "commits": 15,
+   "group": "growth"
+  },
+  {
+   "role": "design",
+   "does": "design work for PrompTugal.news, following the brand",
+   "commits": 13,
+   "group": "creative"
+  },
+  {
+   "role": "inbox",
+   "does": "the only agent with his mailbox: reads and drafts, never sends",
+   "commits": 6,
+   "group": "growth"
+  },
+  {
+   "role": "gamma-ray",
+   "does": "GAMMA-Ray public scans of his own agents",
+   "commits": 4,
+   "group": "safeguards"
+  },
+  {
+   "role": "sgit",
+   "does": "his vault and its key",
+   "commits": 4,
+   "group": "safeguards"
+  },
+  {
+   "role": "vault",
+   "does": "keeps his vaults (the videos vault) and their audits",
+   "commits": 3,
+   "group": "safeguards"
+  },
+  {
+   "role": "instagram",
+   "does": "drafts RiskMandate's Instagram posts and replies; he reviews and posts every one",
+   "commits": 1,
+   "group": "creative"
+  },
+  {
+   "role": "gravity",
+   "does": "brings the Gravity universe to the Lisbon Tech Fringe site, as an adapter",
+   "commits": 0,
+   "group": "build"
+  },
+  {
+   "role": "editor",
+   "does": "filters story candidates and drafts articles for PrompTugal.news",
+   "commits": 0,
+   "group": "creative"
+  },
+  {
+   "role": "jornal",
+   "does": "scouts public stories with licensed photos for PrompTugal.news",
+   "commits": 0,
+   "group": "creative"
+  },
+  {
+   "role": "local",
+   "does": "Algarve options: printers, ads, prices, lead times",
+   "commits": 0,
+   "group": "operations"
+  }
+ ]
+}

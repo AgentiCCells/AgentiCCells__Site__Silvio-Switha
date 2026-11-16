@@ -4,17 +4,18 @@ How to change the Silvio Switha site. Version __VERSION__.
 
 ## Where things are
 
-- `src/`: the site. Static HTML, one shared `src/style.css`, no JavaScript yet.
-- Pages: `src/index.html` (home), `src/portfolio/`, `src/how-he-works/`, `src/music/`, `src/hire/`, `src/photos-and-videos/`, `src/agents/`.
+- `src/`: the site. The home page comes in five designs (`src/index.html` and `src/d/*/index.html`), each self-contained with its own styles and a little JavaScript; the other pages share `src/style.css`. The full map is in `src/agents/silvio.md`.
+- Pages: `src/portfolio/`, `src/how-he-works/`, `src/music/`, `src/hire/`, `src/photos-and-videos/`, `src/agents/`.
+- Media: `src/assets/media/` (the film and other videos, played from this site), `src/assets/photos/` (add with `scripts/add-photo.py`), `src/assets/work/` (screenshots).
 - For agents: `src/llms.txt`, `src/index.md` (the home page as Markdown), `src/agents/*.md`.
-- When you change the home page, change `src/index.md` to match, and update `src/llms.txt` when you add or rename a page.
+- `src/index.md` is the master copy of the facts: change it first, then every design, and update `src/llms.txt` when you add or rename a page.
 
 ## Rules for every page
 
 - `<html lang="en-GB">`, a `<title>`, and a `<meta name="description">`.
 - Keep the word "Version" followed by the version placeholder (two underscores, VERSION, two underscores) in the footer; the build replaces the placeholder.
 - Keep the footer line: "Made with the AgentiCCells site factory; a first version, materials to follow." (update the wording only when Silvio and Dinis agree the site is no longer a first version).
-- No scripts, styles, fonts, images or trackers from other hosts. Plain links to YouTube and Spotify; no embeds.
+- No scripts, styles, fonts, images or trackers from other hosts. Plain links to YouTube and Spotify; no embeds. Videos are served from this site.
 - Every internal link must resolve to a file under `src/`.
 - Plain British English, no em dashes, no hype words.
 - Invent nothing. Every fact has a public source, and every number is marked with its source. Proposals are marked as proposals.

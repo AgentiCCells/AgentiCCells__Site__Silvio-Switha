@@ -4,6 +4,10 @@ AI entrepreneur, musician and producer.
 
 Silvio builds products, visualisations, videos and music with teams of AI agents, fast. He is looking for projects, as a professional and consultant.
 
+## The film
+
+**Know the Reach**, RiskMandate's song and its music video. Music and video by Silvio Switha (the film's credits). 3 minutes 38 seconds, with sound and subtitles, played from this site: https://silvio-switha.agenticcells.site/assets/media/know-the-reach-720p.mp4 (film supplied by Dinis Cruz, 2026-11-16). On Spotify: https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6 ; first part on YouTube: https://www.youtube.com/watch?v=BjN-K-C2fsw
+
 **Hire me for a project:** contact details to follow. See [Hire me](https://silvio-switha.agenticcells.site/hire/).
 
 ## What he has built
@@ -19,7 +23,7 @@ All sources read on 2026-11-16.
 
 ## How he works
 
-A producer's way of working with AI: a vision, immediate feedback, many variations, and choosing. In the words of Dinis Cruz's article, AI "changed the speed, not the vision".
+A producer's way of working with AI: a vision, immediate feedback, many variations, and choosing. In the production audit of 14 November, about 2,300 words of his direction in 78 messages led to 43 generated images, 16 motion clips and 21 edited exports, with paid generation kept to 1,236 Runway credits (https://newsroom.sgit.ai/articles/know-the-reach.md). In the words of Dinis Cruz's article, AI "changed the speed, not the vision".
 
 ## Music
 

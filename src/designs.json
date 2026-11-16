@@ -1,0 +1,11 @@
+{
+ "about": "The same site, the same facts and sources, in five designs. The design picker on every page reads this file.",
+ "default": "premiere",
+ "designs": [
+  { "slug": "premiere", "name": "Premiere", "tagline": "Cinematic: his film first, then the work. The default.", "path": "/", "thumb": "/assets/designs/premiere.jpg" },
+  { "slug": "universe", "name": "Universe", "tagline": "His own 3D universe style: agents in orbit.", "path": "/d/universe/", "thumb": "/assets/designs/universe.jpg" },
+  { "slug": "studio", "name": "The Studio", "tagline": "A producer's desk: tracks, takes and liner notes.", "path": "/d/studio/", "thumb": "/assets/designs/studio.jpg" },
+  { "slug": "proposal", "name": "The Proposal", "tagline": "For clients: what he builds, how, and how to hire him.", "path": "/d/proposal/", "thumb": "/assets/designs/proposal.jpg" },
+  { "slug": "tour", "name": "On Tour", "tagline": "Gig-poster bold: ten days at Web Summit in photos.", "path": "/d/tour/", "thumb": "/assets/designs/tour.jpg" }
+ ]
+}
