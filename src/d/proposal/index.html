@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Silvio Switha: The Proposal</title>
+<meta name="description" content="Silvio Switha, AI entrepreneur, musician and producer, for clients: what he can build for you with teams of AI agents, three case studies with sourced results, how he works, and how to start a project. Prints to two A4 pages.">
+<link rel="alternate" type="text/markdown" href="/index.md">
+<link rel="stylesheet" href="/assets/chrome.css">
+<script src="/assets/chrome.js" data-slug="proposal" defer></script>
+<style>
+/* The Proposal: a studio case-study page for clients. design.proposal@AgentiCCells.dinis, 2026-11-16. Code Apache-2.0, text CC BY 4.0. */
+:root{
+  --paper:#f6f6f2;--card:#ffffff;--ink:#0c0e11;--ink-2:#3a3e46;--ink-3:#5b606b;--rule:#d8d9d3;--rule-2:#e9e9e4;
+  --acc:#14d9d0;--acc-ink:#00666b;--acc-soft:#d6f6f3;
+  --sans:"Helvetica Neue",Helvetica,"Arial Nova",Arial,"Liberation Sans",system-ui,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --gut:clamp(16px,2.2vw,28px);--max:1240px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--sans);font-variant-numeric:tabular-nums lining-nums}
+img,video{display:block;max-width:100%;height:auto}
+a{color:var(--acc-ink);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--acc-ink);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:48px;z-index:10;background:var(--card);padding:.5rem .8rem}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut)}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+p{margin:0 0 .8em}
+.ref{font:600 11px/1 var(--mono);color:var(--acc-ink);text-decoration:none;vertical-align:.45em;margin-left:.2em;white-space:nowrap;letter-spacing:0}
+.ref:hover{text-decoration:underline}
+.label{font:600 12px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
+.shot{font:500 11px/1.3 var(--mono);color:var(--ink-3);margin-top:6px}
+
+/* Top line */
+.top{border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand i{font-style:normal;color:var(--acc-ink)}
+.top nav ul{display:flex;gap:4px 22px;list-style:none;margin:0;padding:0;flex-wrap:wrap;font-size:15px}
+.top nav a{color:var(--ink-2);text-decoration:none}
+.top nav a:hover{color:var(--ink);text-decoration:underline}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 var(--sans);padding:15px 22px;border-radius:999px;text-decoration:none;border:2px solid var(--ink);cursor:pointer;letter-spacing:-.01em}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:#262a31}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--card)}
+.btn .tri{width:0;height:0;border-left:10px solid currentColor;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.btn .dot{width:9px;height:9px;border-radius:50%;background:var(--acc)}
+
+/* Hero */
+.hero{padding:clamp(24px,4vw,52px) 0 clamp(28px,3.5vw,44px)}
+.hero .g12{align-items:center;row-gap:28px}
+.hero-copy{grid-column:1/span 5}
+.hero-media{grid-column:6/span 7}
+.avail{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--ink-2);margin-bottom:22px}
+.avail::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--acc-soft)}
+.hero h1{font-size:clamp(40px,5.4vw,72px);font-weight:800;letter-spacing:-.04em;line-height:.98}
+.hero h1 span{display:block;font-size:.44em;font-weight:500;letter-spacing:-.02em;line-height:1.18;color:var(--ink-2);margin-top:18px}
+.hero .role{margin:20px 0 26px;color:var(--ink-3);font-size:16px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.frame{position:relative;aspect-ratio:16/9;background:#0b1114;border-radius:6px;overflow:hidden;box-shadow:0 1px 0 var(--rule),0 24px 60px -24px rgba(12,14,17,.45)}
+.frame video,.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.frame-play{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;padding:18px;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55));border:0;cursor:pointer;color:#fff;font:inherit;width:100%}
+.frame-play .pill{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--ink);border-radius:999px;padding:10px 18px 10px 10px;font-weight:700;font-size:15px}
+.frame-play .disc{width:34px;height:34px;border-radius:50%;background:var(--acc);display:grid;place-items:center}
+.frame-play .disc::after{content:"";border-left:11px solid var(--ink);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.frame-play:hover .pill{background:var(--acc-soft)}
+.frame-play:focus-visible{outline-offset:-6px;outline-color:#fff}
+.frame .tag{position:absolute;top:14px;left:14px;font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.45);padding:6px 8px;border-radius:3px}
+.cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin-top:12px;font-size:14px;color:var(--ink-2)}
+.cap a{font-weight:600}
+
+/* Facts strip */
+.facts ul{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr)}
+.facts li{padding:18px 16px 18px 0;border-right:1px solid var(--rule)}
+.facts li+li{padding-left:16px}
+.facts li:last-child{border-right:0}
+.facts b{display:block;font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.facts span{display:block;font-size:14px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+
+/* Sections */
+section.block{padding:clamp(48px,7vw,96px) 0;border-bottom:1px solid var(--rule)}
+.sec-head{margin-bottom:clamp(24px,3.5vw,44px);align-items:end}
+.sec-head .label{grid-column:1/span 3;padding-bottom:6px}
+.sec-head h2{grid-column:4/span 9;font-size:clamp(32px,4.2vw,56px);letter-spacing:-.035em}
+.sec-head p{grid-column:4/span 7;margin:14px 0 0;color:var(--ink-2);font-size:18px}
+.note{display:inline-block;background:var(--acc-soft);color:var(--ink);font-size:14px;padding:6px 10px;border-left:3px solid var(--acc-ink)}
+
+/* Services */
+.svc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--gut)}
+.svc>li{grid-column:span 2;background:var(--card);border:1px solid var(--rule);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.svc>li.wide{grid-column:span 3}
+.svc .pic{aspect-ratio:16/9;overflow:hidden;background:#0b1114;border-bottom:1px solid var(--rule)}
+.svc .pic img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.svc .big{aspect-ratio:16/9;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px}
+.svc .big b{font-size:clamp(48px,6vw,80px);font-weight:800;letter-spacing:-.04em;line-height:.9;color:var(--acc)}
+.svc .big span{font-size:15px;color:#d6d9de;margin-top:8px}
+.svc .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.svc .n{font:600 12px/1 var(--mono);color:var(--ink-3)}
+.svc h3{font-size:22px;margin:8px 0 8px}
+.svc p{font-size:15.5px;color:var(--ink-2)}
+.svc .proof{margin-top:auto;padding-top:12px;border-top:1px solid var(--rule-2);font-size:14px}
+.svc .proof b{font:600 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-right:6px}
+
+/* Case studies */
+.case{padding:clamp(36px,5vw,64px) 0;border-top:1px solid var(--rule)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case-head{align-items:baseline;margin-bottom:26px;row-gap:10px}
+.case-head .idx{grid-column:1/span 3;font:700 clamp(40px,5vw,64px)/1 var(--sans);letter-spacing:-.04em;color:var(--acc-ink)}
+.case-head h3{grid-column:4/span 6;font-size:clamp(26px,3vw,40px);letter-spacing:-.03em}
+.case-head .meta{grid-column:10/span 3;font-size:14px;color:var(--ink-2);line-height:1.45}
+.case-head .meta b{color:var(--ink)}
+.case-body{row-gap:28px}
+.case dl{grid-column:1/span 5;margin:0}
+.case dt{font:600 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);padding-top:14px;border-top:1px solid var(--rule)}
+.case dt:first-child{border-top:2px solid var(--ink)}
+.case dd{margin:6px 0 16px;font-size:16px;color:var(--ink-2)}
+.case dd strong{color:var(--ink)}
+.case .visual{grid-column:6/span 7}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.duo img{border-radius:4px;aspect-ratio:16/9;object-fit:cover;width:100%}
+.main-vis{border-radius:6px;overflow:hidden;background:#0b1114;aspect-ratio:16/9;position:relative}
+.main-vis img,.main-vis video{width:100%;height:100%;object-fit:cover}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:6px 0 16px}
+.res div{background:var(--card);padding:12px 12px}
+.res b{display:block;font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.res span{display:block;font-size:12.5px;color:var(--ink-2);margin-top:4px;line-height:1.3}
+
+/* Funnel */
+.funnel{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 14px;margin-top:12px}
+.funnel h4{font-size:15px;letter-spacing:-.01em;margin-bottom:12px}
+.f-row{display:grid;grid-template-columns:118px 1fr 64px;align-items:center;gap:10px;font-size:14px;margin:7px 0}
+.f-row .bar{height:16px;background:var(--rule-2);border-radius:2px;overflow:hidden}
+.f-row .bar i{display:block;height:100%;background:var(--ink)}
+.f-row.last .bar i{background:var(--acc)}
+.f-row .v{text-align:right;font-weight:700}
+.funnel .fn{font-size:12.5px;color:var(--ink-3);margin:10px 0 0}
+
+/* Process */
+.how-grid{row-gap:28px}
+.how-photo{grid-column:1/span 3;margin:0}
+.how-photo img{border-radius:6px;aspect-ratio:3/4;object-fit:cover;object-position:center 30%;width:100%}
+.how-photo figcaption{font-size:13px;color:var(--ink-3);margin-top:8px}
+.steps{grid-column:4/span 9;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s}
+.steps li{padding:0 16px 0 0;border-top:2px solid var(--ink);padding-top:16px;margin-right:12px}
+.steps li:last-child{border-top-color:var(--acc)}
+.steps .k{font:600 12px/1 var(--mono);color:var(--ink-3)}
+.steps h3{font-size:20px;margin:10px 0 10px}
+.steps p{font-size:15px;color:var(--ink-2)}
+.steps blockquote{margin:0 0 .6em;font-size:15px;color:var(--ink);font-weight:600;line-height:1.4}
+.how-quote{grid-column:4/span 9;margin:12px 0 0;padding:22px 0 0;border-top:1px solid var(--rule);font-size:clamp(20px,2.2vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.how-quote cite{display:block;font:400 14px/1.4 var(--sans);color:var(--ink-3);margin-top:8px;font-style:normal;letter-spacing:0}
+
+/* Agents chart */
+.ag-grid{row-gap:28px;align-items:start}
+.ag-sum{grid-column:1/span 4}
+.ag-sum .k{font-size:clamp(56px,7vw,96px);font-weight:800;letter-spacing:-.05em;line-height:.9}
+.ag-sum .k small{font-size:.32em;font-weight:600;letter-spacing:-.01em;color:var(--ink-2);margin-left:6px}
+.ag-sum p{color:var(--ink-2);font-size:16px;margin-top:14px}
+.ag-chart{grid-column:5/span 8}
+.ag-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2);margin:0 0 12px;padding:0;list-style:none}
+.ag-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.ag-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
+.ag-row{display:grid;grid-template-columns:96px 1fr 30px;align-items:center;gap:8px;font-size:13.5px;padding:4px 0;border-bottom:1px solid var(--rule-2)}
+.ag-row .r{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ag-row .bar{height:10px;background:var(--rule-2);border-radius:2px;overflow:hidden}
+.ag-row .bar i{display:block;height:100%}
+.ag-row .c{text-align:right;font-weight:700}
+.ag-src{font-size:12.5px;color:var(--ink-3);margin-top:12px}
+
+/* Contact */
+.contact{background:var(--ink);color:#f2f3f5;padding:clamp(48px,7vw,96px) 0}
+.contact a{color:var(--acc)}
+.contact .g12{row-gap:28px;align-items:center}
+.contact .ct-copy{grid-column:1/span 7}
+.contact .label{color:#a7adb8}
+.contact h2{font-size:clamp(40px,6vw,80px);font-weight:800;letter-spacing:-.045em;margin:12px 0 18px;color:#fff}
+.contact p{color:#c9cdd4;font-size:18px;max-width:38em}
+.contact .pending{display:inline-block;border:1px dashed #6a7280;color:#e6e8eb;padding:12px 16px;border-radius:4px;margin:6px 0 22px;font-size:16px}
+.contact .ctas .btn-primary{background:var(--acc);color:var(--ink);border-color:var(--acc)}
+.contact .ctas .btn-primary:hover{background:#7ff0ea}
+.contact .ctas .btn-ghost{color:#fff;border-color:#fff}
+.contact .ctas .btn-ghost:hover{background:#1f242b}
+.contact :focus-visible{outline-color:var(--acc)}
+.contact figure{grid-column:9/span 4;margin:0}
+.contact figure img{border-radius:6px;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;width:100%}
+.contact figcaption{font-size:13px;color:#a7adb8;margin-top:8px}
+
+/* Sources and footer */
+.sources{padding:40px 0 20px;font-size:14px;color:var(--ink-2)}
+.sources ol{list-style:none;margin:10px 0 0;padding:0;columns:2;column-gap:var(--gut)}
+.sources li{break-inside:avoid;margin:0 0 8px;padding-left:34px;position:relative}
+.sources li b{position:absolute;left:0;font:600 12px/1.6 var(--mono);color:var(--acc-ink)}
+footer.foot{border-top:1px solid var(--rule);padding:22px 0 40px;font-size:14px;color:var(--ink-3)}
+footer.foot p{margin:0 0 4px}
+footer.foot a{color:var(--ink-2)}
+
+/* Lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);width:100%;color:#fff}
+dialog.lb::backdrop{background:rgba(6,8,10,.88)}
+.lb-in{position:relative}
+.lb video{width:100%;aspect-ratio:16/9;background:#000;border-radius:4px}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;font-size:15px}
+.lb-bar a{color:var(--acc)}
+.lb-close{background:#fff;color:var(--ink);border:0;border-radius:999px;padding:10px 16px;font:700 14px/1 var(--sans);cursor:pointer}
+.lb-close:focus-visible{outline:3px solid var(--acc)}
+
+/* Responsive */
+@media (max-width:1020px){
+  .hero-copy,.hero-media{grid-column:1/-1}
+  .hero-media{order:-1}
+  .facts ul{grid-template-columns:repeat(3,1fr)}
+  .facts li:nth-child(3){border-right:0}
+  .facts li:nth-child(n+4){border-top:1px solid var(--rule)}
+  .facts li:nth-child(4){padding-left:0}
+  .svc>li,.svc>li.wide{grid-column:span 3}
+  .case dl,.case .visual{grid-column:1/-1}
+  .case-head .idx{grid-column:1/span 2}
+  .case-head h3{grid-column:3/span 10}
+  .case-head .meta{grid-column:3/span 10}
+  .how-photo{grid-column:1/span 4}
+  .steps{grid-column:5/span 8;grid-template-columns:1fr 1fr;row-gap:24px}
+  .how-quote{grid-column:1/-1}
+  .ag-sum,.ag-chart{grid-column:1/-1}
+  .sec-head .label,.sec-head h2,.sec-head p{grid-column:1/-1}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .top nav{display:none}
+  .hero{padding-top:16px}
+  .hero .role{display:none}
+  .hero-media{order:0}
+  .hero h1{font-size:44px}
+  .hero h1 span{font-size:21px}
+  .facts ul{grid-template-columns:1fr 1fr}
+  .facts li{border-right:0!important;padding:14px 0!important;border-top:1px solid var(--rule)}
+  .facts li:nth-child(odd){padding-right:12px!important;border-right:1px solid var(--rule)!important}
+  .facts li:nth-child(even){padding-left:12px!important}
+  .facts li:nth-child(-n+2){border-top:0}
+  .svc>li,.svc>li.wide{grid-column:1/-1}
+  .case-head .idx,.case-head h3,.case-head .meta{grid-column:1/-1}
+  .how-photo{grid-column:1/-1}
+  .how-photo img{aspect-ratio:4/3}
+  .steps{grid-column:1/-1;grid-template-columns:1fr}
+  .steps li{margin-right:0}
+  .ag-rows{grid-template-columns:1fr}
+  .res b{font-size:22px}
+  .contact .ct-copy,.contact figure{grid-column:1/-1}
+  .contact figure{max-width:300px}
+  .sources ol{columns:1}
+  .f-row{grid-template-columns:96px 1fr 52px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Print: two A4 pages */
+@media print{
+  @page{size:A4;margin:11mm 12mm}
+  :root{--paper:#fff;--card:#fff}
+  body{font-size:8.6pt;line-height:1.38;background:#fff}
+  .skip,.top,dialog,.frame-play,.ctas,.no-print,.svc .pic,.svc .big,.duo,.how-photo,.contact figure,.main-vis video,.ag-legend{display:none!important}
+  a{color:var(--ink);text-decoration:none}
+  .ref{color:var(--acc-ink)}
+  .wrap{max-width:none;padding:0}
+  .g12{column-gap:12px}
+  .hero{min-height:0!important;padding:0 0 6px;display:block}
+  .hero-copy{grid-column:1/span 7}.hero-media{grid-column:8/span 5;order:0}
+  .hero h1{font-size:28pt}.hero h1 span{font-size:12pt;margin-top:6px}
+  .avail{margin-bottom:8px;font-size:7.5pt}
+  .hero .role{margin:6px 0 0;font-size:9pt}
+  .frame{box-shadow:none;border-radius:2px}
+  .cap{font-size:7.5pt;margin-top:4px}
+  .facts li{padding:6px 8px}.facts b{font-size:16pt}.facts span{font-size:7.5pt;margin-top:2px}
+  section.block{padding:10px 0;border-bottom:0;break-inside:auto}
+  .sec-head{margin-bottom:8px}
+  .sec-head h2{font-size:15pt}.sec-head p{font-size:9pt;margin-top:3px}
+  .sec-head .label{font-size:7pt}
+  .note{font-size:7.5pt;padding:2px 6px}
+  .svc{grid-template-columns:repeat(5,1fr);gap:8px}
+  .svc>li,.svc>li.wide{grid-column:span 1;border-radius:2px;break-inside:avoid}
+  .svc .body{padding:7px 8px}
+  .svc h3{font-size:9.5pt;margin:3px 0}
+  .svc p{font-size:7.8pt;margin-bottom:4px}
+  .svc .proof{font-size:7.5pt;padding-top:4px}
+  .case{padding:6px 0}
+  .case-head,.res,.funnel,.main-vis,.steps li,.svc>li{break-inside:avoid}
+  .facts ul{grid-template-columns:repeat(5,1fr)!important}.facts li{border-top:0!important;border-right:1px solid var(--rule)!important;padding:5px 8px!important}.facts li:last-child{border-right:0!important}
+  .print-only{display:block!important}
+  body{font-size:8pt}
+  @page{margin:7mm 10mm}
+  .svc p:not(.proof),.how-quote,.ag-sum p+p,.sec-head p.label+h2+p,.svc+.shot{display:none!important}
+  .sec-head p:not(.label){display:none}
+  #services .sec-head p:not(.label){display:block}
+  .hero-copy{grid-column:1/span 8}.hero-media{grid-column:9/span 4}
+  .hero h1{font-size:24pt}
+  .case dd{font-size:7.6pt}
+  .case-head .idx{font-size:13pt}
+  .case-head h3{font-size:11pt}
+  section.block{padding:6px 0}
+  .sources ol{columns:3}
+  .ag-row{padding:0}
+  .case-head{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;margin-bottom:3px}
+  .case-head .meta br{display:none}
+  .case-head .meta b{margin-left:8px}
+  .hero .role{display:none}
+  .sec-head,.case-head,h2,h3{break-after:avoid}
+  #agents{break-inside:avoid}
+  .main-vis{max-height:40mm}
+  section.block{padding:2px 0}
+  .sec-head{margin-bottom:4px}
+  .sources{padding-top:3px}.sources ol{columns:4!important}.sources li{font-size:6.2pt;line-height:1.25}
+  .contact{padding:4px 0}
+  .case dt{padding-top:2px}
+  .facts b{font-size:13pt}
+  footer.foot p{display:inline;margin-right:6px}
+  .hero-copy{grid-column:1/span 9}.hero-media{grid-column:10/span 3}
+  .cap{font-size:6.8pt}
+  .main-vis.has-video{display:none}
+  .case .visual .shot{display:none}
+  .sec-head .label{grid-column:1/span 2}.sec-head h2,.sec-head p{grid-column:3/span 10}
+  .case-head{margin-bottom:6px}
+  .case-head .idx{font-size:16pt;grid-column:1/span 1}
+  .case-head h3{font-size:12pt;grid-column:2/span 8}
+  .case-head .meta{font-size:7.5pt;grid-column:10/span 3}
+  .case dl{grid-column:1/span 8}
+  .case .visual{grid-column:9/span 4}
+  .case dt{font-size:6.8pt;padding-top:4px}
+  .case dd{font-size:8pt;margin:1px 0 4px}
+  .res b{font-size:12pt}.res span{font-size:6.8pt}.res div{padding:4px 6px}.res{margin:2px 0 4px}
+  .main-vis{border-radius:2px}
+  .shot{font-size:6.5pt}
+  .funnel{padding:6px 8px;margin-top:6px}.funnel h4{font-size:8pt;margin-bottom:4px}
+  .f-row{grid-template-columns:62px 1fr 34px;font-size:7pt;margin:2px 0}.f-row .bar{height:8px}
+  .funnel .fn{font-size:6.5pt;margin-top:3px}
+  .steps{grid-column:1/-1;grid-template-columns:repeat(5,1fr)}
+  .steps li{padding-top:5px;margin-right:8px;padding-right:0}
+  .steps h3{font-size:9.5pt;margin:3px 0}
+  .steps p,.steps blockquote{font-size:7.6pt;margin-bottom:3px}
+  .how-quote{grid-column:1/-1;font-size:10pt;padding-top:6px;margin-top:6px}
+  .how-quote cite{font-size:7pt}
+  .ag-sum{grid-column:1/span 3}.ag-chart{grid-column:4/span 9}
+  .ag-sum .k{font-size:28pt}.ag-sum p{font-size:7.8pt;margin-top:4px}
+  .ag-row{font-size:7pt;padding:1px 0;grid-template-columns:62px 1fr 20px}
+  .ag-row .bar{height:6px}
+  .ag-src{font-size:6.5pt;margin-top:3px}
+  .bar i,.f-row .bar i,.ag-row .bar i,.contact,.svc .big,.facts,.btn-primary{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .contact{background:#fff!important;color:var(--ink);padding:8px 0;border-top:2px solid var(--ink)}
+  .contact .ct-copy{grid-column:1/-1}
+  .contact h2{color:var(--ink);font-size:15pt;margin:2px 0 4px}
+  .contact p{color:var(--ink-2);font-size:8.6pt;max-width:none;margin-bottom:3px}
+  .contact .label{color:var(--ink-3)}
+  .contact .pending{border-color:var(--ink-3);color:var(--ink);padding:3px 8px;margin:2px 0 4px;font-size:8pt}
+  .contact .print-links{display:block!important}
+  .sources{padding:6px 0 0;font-size:7pt}
+  .sources ol{columns:3;margin-top:3px}.sources li{margin-bottom:1px;padding-left:22px}
+  .sources li b{font-size:6.5pt}
+  .sources a::after{content:""}
+  footer.foot{padding:4px 0 0;font-size:6.8pt}
+}
+.print-links,.print-only{display:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/d/proposal/">Silvio Switha<i>.</i></a>
+    <nav aria-label="On this page"><ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Case studies</a></li>
+      <li><a href="#how">Process</a></li>
+      <li><a href="#agents">Agent team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="film" aria-labelledby="hero-h">
+  <div class="wrap g12">
+    <div class="hero-copy">
+      <p class="avail">Available for projects</p>
+      <h1 id="hero-h">Silvio Switha. <span>Products, visualisations, videos and music, built with teams of AI agents.</span></h1>
+      <p class="role">AI entrepreneur, musician and producer. He made the film on this page, and the 3D command centre further down.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contact"><span class="dot" aria-hidden="true"></span>Start a project</a>
+        <button type="button" class="btn btn-ghost" data-film><span class="tri" aria-hidden="true"></span>Watch the film, 3:38</button>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="frame">
+        <video id="loop" muted loop playsinline preload="metadata" poster="/assets/media/know-the-reach-poster.jpg" aria-hidden="true" tabindex="-1">
+          <source src="/assets/media/hero-loop.mp4" type="video/mp4">
+        </video>
+        <span class="tag" aria-hidden="true">Preview, silent</span>
+        <button type="button" class="frame-play" data-film aria-label="Watch the full film, Know the Reach, 3 minutes 38 seconds, with sound">
+          <span class="pill"><span class="disc" aria-hidden="true"></span>Watch the film with sound, 3:38</span>
+        </button>
+      </div>
+      <p class="cap"><span><strong>Know the Reach</strong>, by RiskMandate. Music and video by Silvio Switha.<a class="ref" href="#src-f">F</a></span>
+        <span><a href="https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6">Spotify</a> &middot; <a href="https://www.youtube.com/watch?v=BjN-K-C2fsw">YouTube</a> &middot; <a href="/assets/media/know-the-reach-720p.mp4">MP4</a></span></p>
+    </div>
+  </div>
+</section>
+
+<div class="facts wrap" aria-label="Key figures">
+  <ul>
+    <li><b>20 yrs</b><span>as a musician, singer and producer<a class="ref" href="#src-h">H</a></span></li>
+    <li><b>3:38</b><span>Know the Reach, music and video by him<a class="ref" href="#src-k">K</a></span></li>
+    <li><b>17</b><span>agents in his team, 13 running<a class="ref" href="#src-d">D</a></span></li>
+    <li><b>320</b><span>commits by his agents on the team's site<a class="ref" href="#src-n">N</a></span></li>
+    <li><b>50</b><span>target companies in his Web Summit outreach<a class="ref" href="#src-b">B</a></span></li>
+  </ul>
+</div>
+
+<section class="block" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="g12 sec-head">
+      <p class="label">01 / Services</p>
+      <h2 id="svc-h">What I can build for you</h2>
+      <p>Five kinds of project, each with something he has already shipped. <span class="note"><strong>Proposal for Silvio to confirm.</strong> No prices on this site.</span></p>
+    </div>
+    <ul class="svc">
+      <li>
+        <div class="pic"><img src="/assets/work/command-centre-universo.jpg" alt="Screenshot of UNIVERSO: the team as a universe of planets and moons on a dark background" width="1600" height="1000" loading="lazy"></div>
+        <div class="body"><span class="n">01</span><h3>A command centre or dashboard</h3>
+          <p>Tasks, workstreams, decisions and agents in one view, on phone and desktop, dark and light.</p>
+          <p class="proof"><b>Proof</b><a href="https://web-summit.sgit.ai/people/silvio/app/index.html">UNIVERSO, his Web Summit command centre</a><a class="ref" href="#src-p">P</a></p></div>
+      </li>
+      <li>
+        <div class="pic"><img src="/assets/work/command-centre-x-ray.jpg" alt="Screenshot of the X-Ray: a map of what a company's AI agents can reach" width="1600" height="1000" loading="lazy"></div>
+        <div class="body"><span class="n">02</span><h3>A data visualisation</h3>
+          <p>Centres, nodes, flows and lenses that make a complex picture readable, built to be reused.</p>
+          <p class="proof"><b>Proof</b><a href="https://web-summit.sgit.ai/lib/gravity/">Gravity</a> and the X-Ray<a class="ref" href="#src-g">G</a><a class="ref" href="#src-p">P</a></p></div>
+      </li>
+      <li>
+        <div class="pic"><img src="/assets/media/stills/film-42.jpg" alt="Film still from Know the Reach: a woman at a laptop in a Lisbon office at night, with glowing lines on the table" width="1280" height="720" loading="lazy"></div>
+        <div class="body"><span class="n">03</span><h3>A product video or music</h3>
+          <p>A song, a film, or both, directed by him and made with AI, with claims kept accurate.</p>
+          <p class="proof"><b>Proof</b><a href="#music">Know the Reach, case study 01</a><a class="ref" href="#src-k">K</a></p></div>
+      </li>
+      <li class="wide">
+        <div class="big"><b>17</b><span>agents in his own team, 13 running: conductor, dashboard, dev, video, outreach, CRM, procurement and more<a class="ref" href="#src-d">D</a></span></div>
+        <div class="body"><span class="n">04</span><h3>An agent team for a start-up</h3>
+          <p>Agents with clear jobs and a mandate, where every message is drafted by agents and sent by a person.</p>
+          <p class="proof"><b>Proof</b><a href="#agents">His 17 agents, charted below</a></p></div>
+      </li>
+      <li class="wide">
+        <div class="pic"><img src="/assets/work/design-lab.jpg" alt="Screenshot of the PrompTugal.news design lab page, with seven front-page options" width="1440" height="900" loading="lazy"></div>
+        <div class="body"><span class="n">05</span><h3>Design</h3>
+          <p>Pages and sites, with many variations to choose from: seven front-page options, A to G, for PrompTugal.news; the team site's home page designs A to G are his.</p>
+          <p class="proof"><b>Proof</b><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">His design lab</a><a class="ref" href="#src-l">L</a></p></div>
+      </li>
+    </ul>
+    <p class="shot">Screenshots taken 16 Nov 2026.</p>
+  </div>
+</section>
+
+<section class="block" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="g12 sec-head">
+      <p class="label">02 / Case studies</p>
+      <h2 id="work-h">Three projects, one format</h2>
+      <p>The brief, what he did, how, and the result, with every figure linked to its source.</p>
+    </div>
+
+    <article class="case" id="music" aria-labelledby="c1-h">
+      <div class="g12 case-head">
+        <span class="idx" aria-hidden="true">01</span>
+        <h3 id="c1-h">Know the Reach: a song and its film</h3>
+        <p class="meta"><b>For</b> RiskMandate<br><b>Released</b> Spotify, 13 Nov 2026<a class="ref" href="#src-k">K</a><br><b>Role</b> music and video</p>
+      </div>
+      <div class="g12 case-body">
+        <dl>
+          <dt>Brief</dt>
+          <dd>A song and a music video for RiskMandate, telling what it does without overclaiming: reach, mandate and the gap between them.</dd>
+          <dt>What he did</dt>
+          <dd>Music and video, by the film's own credits.<a class="ref" href="#src-f">F</a> A night in Lisbon turning to morning, a software agent shown as golden light, a human reviewer. Dinis Cruz calls him "one of the best musicians I know".<a class="ref" href="#src-h">H</a></dd>
+          <dt>How</dt>
+          <dd>He directed it like a producer: about <strong>2,300 words</strong> in <strong>78 messages</strong> for the first part of the video. Eight decisions shaped it, among them "the song leads" (the original song stays the timing reference) and "accurate claims". Four font families were tested on a phone screen; Inter SemiBold won.<a class="ref" href="#src-k">K</a></dd>
+          <dt>Result</dt>
+          <dd>
+            <div class="res">
+              <div><b>3:38</b><span>full film, with sound and subtitles<a class="ref" href="#src-f">F</a></span></div>
+              <div><b>1,236</b><span>Runway credits of paid generation<a class="ref" href="#src-k">K</a></span></div>
+              <div><b>49</b><span>existing images reused to keep cost down<a class="ref" href="#src-k">K</a></span></div>
+            </div>
+            Released on Spotify on 13 November 2026; the first part is on <a href="https://www.youtube.com/watch?v=BjN-K-C2fsw">YouTube</a>.<a class="ref" href="#src-k">K</a>
+          </dd>
+        </dl>
+        <div class="visual">
+          <div class="main-vis"><img src="/assets/media/stills/film-84.jpg" alt="Film still: a server hall with a golden light at its end and the subtitle Know the reach, define the mandate" width="1280" height="720" loading="lazy"></div>
+          <div class="funnel" role="figure" aria-labelledby="fun-h">
+            <h4 id="fun-h">From direction to film: the first part of the video</h4>
+            <div class="f-row"><span>Words of direction</span><span class="bar"><i style="width:100%"></i></span><span class="v">2,300</span></div>
+            <div class="f-row"><span>Generated images</span><span class="bar"><i style="width:49%"></i></span><span class="v">43</span></div>
+            <div class="f-row"><span>Motion clips</span><span class="bar"><i style="width:36%"></i></span><span class="v">16</span></div>
+            <div class="f-row"><span>Edited exports</span><span class="bar"><i style="width:39%"></i></span><span class="v">21</span></div>
+            <div class="f-row last"><span>Film</span><span class="bar"><i style="width:3%"></i></span><span class="v">1</span></div>
+            <p class="fn">16 motion clips add up to 108.7 seconds. Bars on a log scale, so the small steps stay visible. Production audit of 14 Nov 2026.<a class="ref" href="#src-k">K</a></p>
+          </div>
+          <div class="duo">
+            <img src="/assets/media/stills/film-20.jpg" alt="Film still: a yellow tram in a Lisbon street at dusk, with the line Your AI agents can keep working" width="1280" height="720" loading="lazy">
+            <img src="/assets/photos/know-the-reach-cover.jpg" alt="The song's cover art: Know the Reach, RiskMandate, over a glowing portal by the water at night" width="1254" height="1254" loading="lazy" style="object-position:center 30%">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" aria-labelledby="c2-h">
+      <div class="g12 case-head">
+        <span class="idx" aria-hidden="true">02</span>
+        <h3 id="c2-h">UNIVERSO: a 3D command centre for a team at Web Summit</h3>
+        <p class="meta"><b>For</b> his Web Summit work<br><b>Built</b> by his dashboard agent, at his direction<a class="ref" href="#src-p">P</a><br><b>Live</b> <a href="https://web-summit.sgit.ai/people/silvio/app/index.html">open it</a></p>
+      </div>
+      <div class="g12 case-body">
+        <dl>
+          <dt>Brief</dt>
+          <dd>One place to run a busy week: the people, their agents, the work and the decisions, readable at a glance.</dd>
+          <dt>What he did</dt>
+          <dd>Drew the team as a universe: <strong>people as planets, their agents as moons, messages as flows</strong>, and agents without a behaviour policy flagged.<a class="ref" href="#src-p">P</a></dd>
+          <dt>How</dt>
+          <dd>Tabs for X-Ray, Gamma-Ray, Swarm, videos, PrompTugal.news, the Lisbon Tech Fringe and the storm; tasks, workstreams, decisions, agents, Ask Claude and voice; dark and light; phone and desktop.<a class="ref" href="#src-p">P</a> The drawing became <a href="https://web-summit.sgit.ai/lib/gravity/">Gravity</a>, a reusable library in Portuguese and English, brought to other sites through adapters.<a class="ref" href="#src-g">G</a></dd>
+          <dt>Result</dt>
+          <dd>
+            <div class="res">
+              <div><b>3</b><span>worlds: UNIVERSO, X-Ray and Gravity<a class="ref" href="#src-p">P</a></span></div>
+              <div><b>2</b><span>languages, Portuguese and English<a class="ref" href="#src-g">G</a></span></div>
+              <div><b>10 Nov</b><span>shown in Dinis Cruz's meeting deck<a class="ref" href="#src-g">G</a></span></div>
+            </div>
+            Live, and in use on another site: Gravity draws the Lisbon Tech Fringe.<a class="ref" href="#src-g">G</a>
+          </dd>
+        </dl>
+        <div class="visual">
+          <div class="main-vis has-video">
+            <video controls muted playsinline preload="none" poster="/assets/work/command-centre-universo.jpg" aria-label="Screen recording, 45 seconds, silent: his universe and agent views explored on an iMac">
+              <source src="/assets/media/universe-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <img class="print-only main-vis" src="/assets/work/command-centre-universo.jpg" alt="" width="1600" height="1000" loading="lazy">
+          <p class="shot">Screen recording, 45 s, silent. Poster: screenshot, 16 Nov 2026.</p>
+          <div class="duo">
+            <img src="/assets/work/command-centre-swarm.jpg" alt="Screenshot of the Swarm tab: one real run at a time, with panels for each step" width="1600" height="1000" loading="lazy">
+            <img src="/assets/photos/universe-on-screen.jpg" alt="An iMac on a desk showing UNIVERSO, with planets and moons" width="1600" height="1257" loading="lazy">
+          </div>
+          <p class="shot">Left: the Swarm, screenshot 16 Nov 2026. Right: UNIVERSO on an iMac.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" aria-labelledby="c3-h">
+      <div class="g12 case-head">
+        <span class="idx" aria-hidden="true">03</span>
+        <h3 id="c3-h">Web Summit Lisbon 2026, for RiskMandate</h3>
+        <p class="meta"><b>For</b> RiskMandate<br><b>When</b> 9 to 12 Nov 2026<a class="ref" href="#src-b">B</a><br><b>Line</b> "Agents with a mandate."<a class="ref" href="#src-m">M</a></p>
+      </div>
+      <div class="g12 case-body">
+        <dl>
+          <dt>Brief</dt>
+          <dd>Ideas, outreach, local work in the Algarve and video for four days of Web Summit.<a class="ref" href="#src-t">T</a></dd>
+          <dt>What he did</dt>
+          <dd>Ran outreach to <strong>50 target companies</strong> in the team's CRM; the merch print order through his procurement agent; the video pipeline to YouTube, Instagram and LinkedIn; "RiskMandate explicado" in Portuguese, built by his conductor.<a class="ref" href="#src-b">B</a></dd>
+          <dt>How</dt>
+          <dd>Every message drafted by agents and sent by him. His CRM agent writes a morning summary in Portuguese and sends nothing.<a class="ref" href="#src-d">D</a> He was one of the six people who ran ten days at Web Summit with around 250 agents.<a class="ref" href="#src-n">N</a></dd>
+          <dt>Result</dt>
+          <dd>
+            <div class="res">
+              <div><b>50</b><span>target companies in outreach<a class="ref" href="#src-b">B</a></span></div>
+              <div><b>3</b><span>video channels: YouTube, Instagram, LinkedIn<a class="ref" href="#src-b">B</a></span></div>
+              <div><b>~250</b><span>agents across the six-person team<a class="ref" href="#src-n">N</a></span></div>
+            </div>
+            His brief on the team site: "Silvio's project-management workflows are some of the best around."<a class="ref" href="#src-b">B</a>
+          </dd>
+        </dl>
+        <div class="visual">
+          <div class="main-vis"><img src="/assets/work/riskmandate-explicado.jpg" alt="Screenshot of RiskMandate explicado, a page in Portuguese on a dark panel" width="1440" height="900" loading="lazy" style="object-position:center top"></div>
+          <div class="duo">
+            <img src="/assets/work/video-library.jpg" alt="Screenshot of the team's video library: videos ready to post, by channel" width="1440" height="900" loading="lazy" style="object-position:center top">
+            <img src="/assets/media/stills/film-168.jpg" alt="Film still: a laptop on a long table in a dark meeting room, with the line We put our own agent on the table" width="1280" height="720" loading="lazy">
+          </div>
+          <p class="shot">Screenshots, 16 Nov 2026; film still from Know the Reach.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block p2" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="g12 sec-head">
+      <p class="label">03 / Process</p>
+      <h2 id="how-h">How I work: a producer's way</h2>
+      <p>Five steps, our summary of how he made the film. The quoted words are Dinis Cruz's.<a class="ref" href="#src-h">H</a></p>
+    </div>
+    <div class="g12 how-grid">
+      <figure class="how-photo">
+        <img src="/assets/photos/silvio-at-the-desk.jpg" alt="Silvio at a desk in a red RiskMandate T-shirt, hand on his chin, next to the computer showing his universe" width="858" height="1600" loading="lazy">
+        <figcaption>At the desk, beside his universe. Web Summit, Nov 2026.</figcaption>
+      </figure>
+      <ol class="steps">
+        <li><span class="k">01</span><h3>Vision</h3><blockquote>"AI changed the speed, not the vision."</blockquote><p>He starts from what the work should feel like, with twenty years of music behind it.<a class="ref" href="#src-h">H</a></p></li>
+        <li><span class="k">02</span><h3>Direction</h3><blockquote>"The chorus, the structure, the pacing: those are creative decisions, and they are his."</blockquote><p>About 2,300 words of direction in 78 messages.<a class="ref" href="#src-k">K</a></p></li>
+        <li><span class="k">03</span><h3>Fast variations</h3><blockquote>"dozens, if not hundreds, of variations"</blockquote><p>Working "like a producer with immediate feedback", he "stayed in flow".<a class="ref" href="#src-h">H</a></p></li>
+        <li><span class="k">04</span><h3>Choosing</h3><p>Decisions written down: "the song leads", "accurate claims". Four font families tried; one won. One eight-second clip tested before spending more.<a class="ref" href="#src-k">K</a></p></li>
+        <li><span class="k">05</span><h3>Shipping</h3><p>Released, live, posted. Agents draft; he reviews and sends every message himself.<a class="ref" href="#src-n">N</a></p></li>
+      </ol>
+      <p class="how-quote">"Every hour he spent carried twenty years of experience."<cite>Dinis Cruz, Every hour is twenty years, 15 Nov 2026<a class="ref" href="#src-h">H</a></cite></p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="agents" aria-labelledby="ag-h">
+  <div class="wrap">
+    <div class="g12 sec-head">
+      <p class="label">04 / Agent team</p>
+      <h2 id="ag-h">My agent team</h2>
+    </div>
+    <div class="g12 ag-grid">
+      <div class="ag-sum">
+        <p class="k"><span id="ag-total">17</span><small>agents, <span id="ag-run">13</span> running</small></p>
+        <p>Each with one job, from the conductor that runs the others to the inbox agent that reads and drafts but never sends. 320 commits by his agents on the team's site.<a class="ref" href="#src-n">N</a></p>
+        <p>Commits per agent as his dashboard counted them on 16 Nov 2026 (<span id="ag-sum">341</span> in all).<a class="ref" href="#src-d">D</a></p>
+      </div>
+      <figure class="ag-chart" style="margin:0" aria-labelledby="ag-cap">
+        <ul class="ag-legend" id="ag-legend"></ul>
+        <div class="ag-rows" id="ag-rows">
+          <div class="ag-row"><span class="r">conductor</span><span class="bar"><i style="width:100%;background:#0c0e11"></i></span><span class="c">75</span></div>
+          <div class="ag-row"><span class="r">dashboard</span><span class="bar"><i style="width:83%;background:#00838a"></i></span><span class="c">62</span></div>
+          <div class="ag-row"><span class="r">procurement</span><span class="bar"><i style="width:79%;background:#8a8f99"></i></span><span class="c">59</span></div>
+          <div class="ag-row"><span class="r">dev</span><span class="bar"><i style="width:53%;background:#00838a"></i></span><span class="c">40</span></div>
+          <div class="ag-row"><span class="r">video</span><span class="bar"><i style="width:43%;background:#14d9d0"></i></span><span class="c">32</span></div>
+          <div class="ag-row"><span class="r">outreach</span><span class="bar"><i style="width:36%;background:#4a5262"></i></span><span class="c">27</span></div>
+          <div class="ag-row"><span class="r">crm</span><span class="bar"><i style="width:20%;background:#4a5262"></i></span><span class="c">15</span></div>
+          <div class="ag-row"><span class="r">design</span><span class="bar"><i style="width:17%;background:#14d9d0"></i></span><span class="c">13</span></div>
+          <div class="ag-row"><span class="r">inbox</span><span class="bar"><i style="width:8%;background:#4a5262"></i></span><span class="c">6</span></div>
+          <div class="ag-row"><span class="r">gamma-ray</span><span class="bar"><i style="width:5%;background:#b9bcc3"></i></span><span class="c">4</span></div>
+          <div class="ag-row"><span class="r">sgit</span><span class="bar"><i style="width:5%;background:#b9bcc3"></i></span><span class="c">4</span></div>
+          <div class="ag-row"><span class="r">vault</span><span class="bar"><i style="width:4%;background:#b9bcc3"></i></span><span class="c">3</span></div>
+          <div class="ag-row"><span class="r">instagram</span><span class="bar"><i style="width:1%;background:#14d9d0"></i></span><span class="c">1</span></div>
+          <div class="ag-row"><span class="r">gravity</span><span class="bar"><i style="width:0"></i></span><span class="c">0</span></div>
+          <div class="ag-row"><span class="r">editor</span><span class="bar"><i style="width:0"></i></span><span class="c">0</span></div>
+          <div class="ag-row"><span class="r">jornal</span><span class="bar"><i style="width:0"></i></span><span class="c">0</span></div>
+          <div class="ag-row"><span class="r">local</span><span class="bar"><i style="width:0"></i></span><span class="c">0</span></div>
+        </div>
+        <figcaption class="ag-src" id="ag-cap">Commits per agent, coloured by group. Data: <a href="/data/agents.json">/data/agents.json</a>, from his public dashboard, read 16 Nov 2026.<a class="ref" href="#src-d">D</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="ct-h">
+  <div class="wrap g12">
+    <div class="ct-copy">
+      <p class="label">05 / Start a project</p>
+      <h2 id="ct-h">Start a project</h2>
+      <p>A command centre, a visualisation, a film or a song, an agent team or a design: tell Silvio what you want to make.</p>
+      <p class="pending">Contact details to follow. Silvio will add them himself.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="/hire/">Hire Silvio</a>
+        <a class="btn btn-ghost" href="/agents/">Ask your AI about Silvio</a>
+      </div>
+      <p class="print-links">Hire Silvio: silvio-switha.agenticcells.site/hire/ &middot; Ask your AI about Silvio: silvio-switha.agenticcells.site/agents/</p>
+    </div>
+    <figure>
+      <img src="/assets/photos/silvio-smile.jpg" alt="Silvio Switha smiling, in a black hoodie, at the entrance to the venue" width="812" height="1600" loading="lazy">
+      <figcaption>Silvio Switha, Web Summit, Nov 2026.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sources" aria-labelledby="src-h"><div class="wrap">
+  <h2 id="src-h" class="label">Sources</h2>
+  <ol>
+    <li id="src-k"><b>K</b>Dinis Cruz, <a href="https://newsroom.sgit.ai/articles/know-the-reach.html">Know the Reach</a>, newsroom.sgit.ai, 15 Nov 2026.</li>
+    <li id="src-h"><b>H</b>Dinis Cruz, <a href="https://newsroom.sgit.ai/articles/every-hour-is-twenty-years.html">Every hour is twenty years</a>, newsroom.sgit.ai, 15 Nov 2026.</li>
+    <li id="src-n"><b>N</b><a href="https://newsroom.sgit.ai/articles/ten-days-at-web-summit.html">Ten days at Web Summit</a>, newsroom.sgit.ai, read 16 Nov 2026.</li>
+    <li id="src-p"><b>P</b>His <a href="https://web-summit.sgit.ai/people/silvio/index.html">dashboard</a> and <a href="https://web-summit.sgit.ai/people/silvio/app/index.html">command centre</a>, read 16 Nov 2026.</li>
+    <li id="src-d"><b>D</b><a href="https://web-summit.sgit.ai/people/silvio/index.md">His dashboard's agent list</a>, as <a href="/data/agents.json">/data/agents.json</a>, read 16 Nov 2026.</li>
+    <li id="src-g"><b>G</b><a href="https://web-summit.sgit.ai/lib/gravity/">Gravity</a>, read 16 Nov 2026.</li>
+    <li id="src-l"><b>L</b><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">The PrompTugal.news design lab</a>, read 16 Nov 2026.</li>
+    <li id="src-b"><b>B</b><a href="https://web-summit.sgit.ai/brief-silvio/index.html">His brief</a> on the team site, read 16 Nov 2026.</li>
+    <li id="src-t"><b>T</b><a href="https://web-summit.sgit.ai/team/silvio/index.html">His role page</a>, read 16 Nov 2026.</li>
+    <li id="src-m"><b>M</b><a href="https://web-summit.sgit.ai/meet/silvio/index.html">Meet Silvio</a>, read 16 Nov 2026.</li>
+    <li id="src-f"><b>F</b>The film's own credits; film supplied by Dinis Cruz, 16 Nov 2026.</li>
+  </ol>
+</div></section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Every figure on this page names its source; the list of services is a proposal for Silvio to confirm.</p>
+    <p>Version __VERSION__ &middot; Code Apache-2.0, text CC BY 4.0 &middot; <a href="/llms.txt">llms.txt</a> &middot; <a href="/index.md">index.md</a> &middot; <a href="/portfolio/">Portfolio</a> &middot; <a href="/photos-and-videos/">Photos and videos</a></p>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-labelledby="lb-h">
+  <div class="lb-in">
+    <div class="lb-bar">
+      <p id="lb-h" style="margin:0"><strong>Know the Reach</strong>, by RiskMandate. Music and video by Silvio Switha. <a href="https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6">Spotify</a> &middot; <a href="https://www.youtube.com/watch?v=BjN-K-C2fsw">YouTube</a></p>
+      <button type="button" class="lb-close" data-close>Close</button>
+    </div>
+    <video id="film-full" controls playsinline preload="none" poster="/assets/media/know-the-reach-poster.jpg">
+      <source src="/assets/media/know-the-reach-720p.mp4" type="video/mp4">
+      <a href="/assets/media/know-the-reach-720p.mp4">Download the film (MP4, 25.7 MB)</a>
+    </video>
+  </div>
+</dialog>
+
+<script>
+// The Proposal: hero loop, film lightbox, agent chart from /data/agents.json. Code Apache-2.0.
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const loop = document.getElementById('loop');
+  const run = () => { if (still.matches) { loop.pause(); } else { const p = loop.play(); if (p) p.catch(() => {}); } };
+  run(); still.addEventListener?.('change', run);
+
+  const lb = document.getElementById('lb'), film = document.getElementById('film-full');
+  let back = null;
+  document.querySelectorAll('[data-film]').forEach(b => b.addEventListener('click', () => {
+    if (!lb.showModal) { location.href = '/assets/media/know-the-reach-720p.mp4'; return; }
+    back = b; lb.showModal(); loop.pause();
+    const p = film.play(); if (p) p.catch(() => {});
+  }));
+  lb.querySelector('[data-close]').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+  lb.addEventListener('close', () => { film.pause(); run(); back?.focus(); });
+
+  const colours = { lead: '#0c0e11', build: '#00838a', creative: '#14d9d0', growth: '#4a5262', operations: '#8a8f99', safeguards: '#b9bcc3' };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const legend = document.getElementById('ag-legend');
+  const drawLegend = groups => { legend.innerHTML = Object.entries(groups).map(([k, v]) => `<li><i style="background:${colours[k] || '#999'}"></i>${esc(v)}</li>`).join(''); };
+  drawLegend({ lead: 'Leads the team', build: 'Builds the products', creative: 'Video, design and words', growth: 'Outreach and CRM', operations: 'Operations and buying', safeguards: 'Security and vaults' });
+  fetch('/data/agents.json').then(r => r.ok ? r.json() : Promise.reject()).then(d => {
+    const list = [...d.agents].sort((a, b) => b.commits - a.commits);
+    const max = Math.max(1, ...list.map(a => a.commits));
+    document.getElementById('ag-rows').innerHTML = list.map(a =>
+      `<div class="ag-row" title="${esc(a.does)}"><span class="r">${esc(a.role)}</span><span class="bar"><i style="width:${Math.round(a.commits / max * 100)}%;background:${colours[a.group] || '#999'}"></i></span><span class="c">${a.commits}</span></div>`).join('');
+    if (d.groups) drawLegend(d.groups);
+    document.getElementById('ag-total').textContent = d.total;
+    document.getElementById('ag-run').textContent = d.running;
+    document.getElementById('ag-sum').textContent = d.commits_total;
+  }).catch(() => {});
+})();
+</script>
+</body>
+</html>
