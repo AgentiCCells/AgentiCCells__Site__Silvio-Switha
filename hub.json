@@ -1,0 +1,11 @@
+{
+  "schema": "hub.json (draft)",
+  "name": "Silvio Switha",
+  "what_it_does": "Silvio Switha, AI entrepreneur, musician and producer: a portfolio of what he built with AI agents, and how to hire him for a project.",
+  "owner": "AgentiCCells",
+  "team": "factory@AgentiCCells.dinis, instructed by Dinis Cruz",
+  "licence": { "code": "Apache-2.0", "text": "CC BY 4.0" },
+  "repository": "https://github.com/AgentiCCells/AgentiCCells__Site__Silvio-Switha",
+  "live_address": "https://silvio-switha.agenticcells.site",
+  "version_from": "https://silvio-switha.agenticcells.site/version.json"
+}
