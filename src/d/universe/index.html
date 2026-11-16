@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Silvio Switha: the Universe design</title>
+<meta name="description" content="Silvio Switha, AI entrepreneur, musician and producer, drawn in his own visual language: a universe with him at the core and his 17 AI agents in orbit, his film Know the Reach, and the worlds he built for Web Summit.">
+<meta name="color-scheme" content="dark">
+<link rel="alternate" type="text/markdown" href="/index.md">
+<link rel="stylesheet" href="/assets/chrome.css">
+<script src="/assets/chrome.js" data-slug="universe" defer></script>
+<!-- Design "Universe" by design.universe@AgentiCCells.dinis, 2026-11-16. Code Apache-2.0, text CC BY 4.0. -->
+<style>
+:root{
+  --bg:#050815;--bg2:#0a1126;--panel:rgba(12,19,40,.82);--ink:#eaeef8;--mut:#aab4cb;--dim:#8792ad;
+  --gold:#f5c76a;--teal:#5fd9c8;--line:rgba(150,175,235,.2);--chipbg:rgba(9,14,30,.86);
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --lead:#f5c76a;--build:#5fd9c8;--creative:#b9a6ff;--growth:#7cbcff;--operations:#ff9e7a;--safeguards:#ff7d9c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:var(--gold);text-underline-offset:3px}
+a:hover{color:#ffe1a3}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:#111;padding:.5rem 1rem;border-radius:8px;z-index:3000;font-weight:700}
+.skip:focus{left:12px}
+.chip{display:inline-flex;align-items:center;gap:.45em;font:600 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:.5em .85em;border-radius:999px;background:var(--chipbg);border:1px solid var(--line);color:var(--ink)}
+.chip.gold{color:#1a1406;background:var(--gold);border-color:var(--gold)}
+.chip.live::before{content:"";width:7px;height:7px;border-radius:50%;background:#4ee39a;box-shadow:0 0 8px #4ee39a}
+.mono{font-family:var(--mono)}
+.src{font:12.5px/1.5 var(--mono);color:var(--dim)}
+.src a{color:var(--mut)}
+sup.s{font:600 10.5px var(--mono);margin-left:.15em}
+sup.s a{color:var(--teal);text-decoration:none}
+
+/* ---------- Hero: the universe ---------- */
+.hero{position:relative;min-height:max(660px,calc(100svh - 34px));max-height:940px;overflow:hidden;isolation:isolate;
+  background:
+   radial-gradient(60% 55% at 22% 30%,rgba(34,105,120,.32),transparent 70%),
+   radial-gradient(45% 50% at 78% 70%,rgba(70,60,160,.28),transparent 70%),
+   radial-gradient(35% 35% at 40% 75%,rgba(20,70,110,.25),transparent 70%),
+   linear-gradient(180deg,#060a1a,#050815 70%)}
+#sky{position:absolute;inset:0;width:100%;height:100%;z-index:0;cursor:grab;touch-action:pan-y}
+#sky:active{cursor:grabbing}
+#sky:focus-visible{outline-offset:-6px}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,460px);gap:24px;max-width:1320px;margin:0 auto;padding:44px 40px 32px;min-height:inherit;pointer-events:none}
+.hero-in>*{pointer-events:auto}
+.who{align-self:start;max-width:600px;text-shadow:0 2px 18px rgba(3,6,16,.9)}
+.who .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+h1{font:200 clamp(44px,6.2vw,86px)/.95 var(--sans);letter-spacing:-.035em;margin:0 0 14px}
+h1 b{font-weight:700;color:var(--gold)}
+.role{font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:var(--ink);max-width:34em;margin:0 0 20px}
+.role strong{color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:.55em;font:700 14px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.95em 1.3em;border-radius:999px;border:1px solid var(--gold);color:#1a1406;background:var(--gold);cursor:pointer;box-shadow:0 0 24px rgba(245,199,106,.35)}
+.btn:hover{background:#ffd98c;color:#1a1406}
+.btn.ghost{background:rgba(8,12,26,.7);color:var(--gold);box-shadow:none}
+.btn.ghost:hover{background:rgba(245,199,106,.14);color:#ffe1a3}
+.btn svg{width:14px;height:14px;fill:currentColor}
+
+/* the film planet */
+.film{align-self:center;position:relative;margin:0}
+.film .frame{position:relative;border-radius:22px;overflow:visible}
+.film .frame::before{content:"";position:absolute;left:-14%;right:-14%;top:30%;bottom:30%;border:1.5px solid rgba(245,199,106,.45);border-radius:50%;transform:rotate(-9deg);z-index:-1;box-shadow:0 0 30px rgba(245,199,106,.15)}
+.film .screen{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:16/9;background:#000 url(/assets/media/know-the-reach-poster.jpg) center/cover;box-shadow:0 0 0 1px rgba(245,199,106,.55),0 0 50px rgba(245,199,106,.28),0 0 140px rgba(95,217,200,.16),0 30px 60px rgba(0,0,0,.6)}
+.film video{width:100%;height:100%;object-fit:cover}
+.film .over{position:absolute;inset:auto 0 0 0;padding:44px 16px 14px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;background:linear-gradient(transparent,rgba(3,5,12,.86))}
+.film .tag{position:absolute;top:12px;left:12px}
+.mini{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:rgba(5,8,20,.75);border:1px solid var(--line);border-radius:999px;padding:.6em .9em;cursor:pointer}
+.mini:hover{border-color:var(--gold)}
+.film figcaption{margin-top:16px;font-size:14.5px;color:var(--mut);text-shadow:0 1px 10px #050815}
+.film figcaption b{color:var(--ink);font-weight:600}
+.legend{position:absolute;right:40px;bottom:24px;z-index:1;background:rgba(7,11,25,.84);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font:11.5px/1.8 var(--mono);color:var(--mut);max-width:290px}
+.legend h2{font:700 11px/1 var(--mono);letter-spacing:.18em;color:var(--gold);margin:0 0 8px;text-transform:uppercase}
+.legend ul{list-style:none;margin:0;padding:0;columns:2;column-gap:18px}
+.legend li{white-space:nowrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:0}
+.legend p{margin:6px 0 0;line-height:1.5}
+.hint{position:absolute;left:40px;bottom:20px;z-index:1;font:11px/1.4 var(--mono);letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
+#tip{position:absolute;z-index:2;pointer-events:none;max-width:250px;background:rgba(7,11,25,.95);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px;line-height:1.45;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#tip b{font:700 11.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
+
+/* ---------- Agent list (mirror of the canvas) ---------- */
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.crew{padding:64px 0 40px;border-top:1px solid var(--line);background:linear-gradient(180deg,#070c1d,var(--bg))}
+.crew h2,.world h2{font:300 clamp(30px,3.6vw,48px)/1.08 var(--sans);letter-spacing:-.02em;margin:10px 0 12px}
+.lede{color:var(--mut);max-width:46em;margin:0 0 28px}
+.groups{columns:4 250px;column-gap:18px;list-style:none;padding:0;margin:0}
+.grp{break-inside:avoid;margin:0 0 18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.grp h3{display:flex;align-items:center;gap:9px;font:700 12px/1.2 var(--mono);letter-spacing:.16em;text-transform:uppercase;margin:0 0 2px}
+.grp h3 i{width:12px;height:12px;border-radius:50%;box-shadow:0 0 10px currentColor;background:currentColor}
+.grp>p{margin:0 0 10px;color:var(--mut);font-size:14px}
+.grp ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.ag{all:unset;box-sizing:border-box;display:block;width:100%;padding:9px 10px;border-radius:10px;cursor:pointer;border:1px solid transparent}
+.ag:hover,.ag[aria-pressed="true"]{background:rgba(255,255,255,.05);border-color:var(--line)}
+.ag:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.ag .top{display:flex;justify-content:space-between;gap:8px;font:700 12.5px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.ag .top span{color:var(--mut);font-weight:500;letter-spacing:.04em;text-transform:none}
+.ag .bar{display:block;height:3px;border-radius:3px;background:rgba(255,255,255,.08);margin:6px 0 5px}
+.ag .bar i{display:block;height:100%;border-radius:3px;background:currentColor}
+.ag .does{display:block;font-size:13.5px;line-height:1.45;color:var(--mut)}
+
+/* ---------- Worlds ---------- */
+.worlds>*{min-width:0}
+.worlds{display:grid;grid-template-columns:190px minmax(0,1fr);gap:48px;max-width:1240px;margin:0 auto;padding:0 32px}
+.nav{position:sticky;top:18px;align-self:start;padding:28px 0}
+.nav p{font:700 11px var(--mono);letter-spacing:.18em;color:var(--dim);text-transform:uppercase;margin:0 0 12px}
+.nav ol{list-style:none;margin:0;padding:0;position:relative}
+.nav ol::before{content:"";position:absolute;left:10px;top:12px;bottom:12px;border-left:1px dashed rgba(150,175,235,.3)}
+.nav a{position:relative;display:flex;align-items:center;gap:12px;padding:7px 0;color:var(--mut);text-decoration:none;font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--ink)}
+.pl{flex:none;width:21px;height:21px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff8,transparent 45%),var(--c,#5fd9c8);box-shadow:0 0 0 4px var(--bg);transform:scale(.62);transition:transform .25s}
+.nav a[aria-current="true"] .pl{transform:scale(1);box-shadow:0 0 0 4px var(--bg),0 0 16px var(--c)}
+.world{padding:84px 0 40px;border-bottom:1px solid var(--line);scroll-margin-top:12px}
+.whead{display:flex;align-items:center;gap:18px}
+.globe{flex:none;position:relative;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 34% 30%,rgba(255,255,255,.55),transparent 42%),radial-gradient(circle at 60% 70%,rgba(0,0,0,.45),transparent 60%),var(--c);box-shadow:0 0 30px color-mix(in srgb,var(--c) 45%,transparent)}
+.globe::after{content:"";position:absolute;left:-30%;right:-30%;top:38%;bottom:38%;border:1.5px solid color-mix(in srgb,var(--c) 70%,#fff 10%);border-radius:50%;transform:rotate(-16deg)}
+.cols{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:36px;align-items:start;margin-top:22px}
+.cols p{margin:0 0 14px}
+.shot{margin:0}
+.shot img,.shot video{border-radius:14px;border:1px solid rgba(95,217,200,.35);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 20px 50px rgba(0,0,0,.5),0 0 60px rgba(95,217,200,.08);width:100%;height:auto;background:#0b1224}
+.shot figcaption{margin-top:9px;font:12px/1.5 var(--mono);letter-spacing:.06em;color:var(--dim)}
+.shot figcaption b{color:var(--mut);font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.facts{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{font:600 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:.55em .8em;border-radius:8px;background:rgba(95,217,200,.08);border:1px solid rgba(95,217,200,.28);color:#c9f3ec}
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
+.more figcaption{font-family:var(--sans);font-size:14px;letter-spacing:0;color:var(--mut)}
+/* gravity diagram */
+.gdia{width:100%;height:auto;margin:6px 0 18px}
+.gdia text{font:600 11px var(--mono);letter-spacing:.1em;fill:#dfe6f5}
+.gdia .m{fill:#aab4cb;font-weight:500;letter-spacing:.04em}
+/* funnel */
+.funnel{list-style:none;margin:24px 0 18px;padding:0;display:grid;gap:4px}
+.funnel li{display:grid;grid-template-columns:190px minmax(0,1fr);gap:18px;align-items:center;padding:12px 0;border-top:1px dashed var(--line)}
+.funnel .n{font:200 38px/1 var(--sans);color:var(--ink)}
+.funnel .n small{display:block;font:600 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:5px}
+.dots{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--c,#aab4cb)}
+.dots i.o{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(245,199,106,.6)}
+.dots i.big{width:34px;height:34px;background:radial-gradient(circle at 35% 30%,#fff7d6,#f5c76a 45%,#b77d1c);box-shadow:0 0 26px #f5c76a}
+.dots em{font:12px var(--mono);color:var(--dim);font-style:normal;margin-left:8px}
+.stills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:26px 0 10px}
+.stills img{border-radius:10px;aspect-ratio:16/9;object-fit:cover;width:100%;height:auto;border:1px solid var(--line)}
+.decide{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.decide div{border:1px solid rgba(245,199,106,.35);border-radius:14px;padding:14px 16px;background:rgba(245,199,106,.05)}
+.decide b{display:block;font:700 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+blockquote{margin:22px 0;padding:4px 0 4px 22px;border-left:2px solid var(--gold);font:300 clamp(20px,2.1vw,27px)/1.4 var(--sans);color:#fff}
+blockquote footer{font:13px/1.5 var(--mono);color:var(--mut);margin-top:8px}
+/* music */
+.disc{position:relative;max-width:420px}
+.disc img{border-radius:50%;aspect-ratio:1;object-fit:cover;width:100%;height:auto;box-shadow:0 0 0 10px #0d1430,0 0 0 11px var(--line),0 0 70px rgba(95,217,200,.2)}
+.disc::after{content:"";position:absolute;left:44%;top:44%;width:12%;height:12%;border-radius:50%;background:var(--bg);box-shadow:0 0 0 2px var(--line)}
+/* how: the loop */
+.loop{list-style:none;padding:0;margin:20px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:s}
+.loop li{position:relative;border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--panel)}
+.loop li::before{counter-increment:s;content:"0" counter(s);font:700 11px var(--mono);letter-spacing:.14em;color:var(--teal)}
+.loop h3{font:600 18px/1.3 var(--sans);margin:4px 0 6px}
+.loop p{margin:0;font-size:14.5px;color:var(--mut)}
+/* web summit satellites */
+.orbitp{position:relative;height:520px;margin:20px 0}
+.orbitp::before{content:"";position:absolute;left:4%;right:4%;top:22%;bottom:22%;border:1px solid var(--line);border-radius:50%}
+.orbitp .sun{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:300px}
+.orbitp .sun b{display:block;font:200 46px/1 var(--sans);color:var(--gold)}
+.sat{position:absolute;margin:0;width:var(--s,120px);text-align:center}
+.sat img{width:100%;aspect-ratio:1;height:auto;border-radius:50%;object-fit:cover;object-position:50% 14%;border:2px solid rgba(245,199,106,.55);box-shadow:0 0 0 6px rgba(5,8,21,.9),0 0 30px rgba(95,217,200,.22)}
+.sat figcaption{font:10.5px/1.35 var(--mono);letter-spacing:.06em;color:var(--mut);margin-top:8px}
+.did{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;list-style:none;padding:0;margin:18px 0}
+.did li{border-left:2px solid var(--teal);padding:2px 0 2px 14px;color:var(--mut);font-size:15px}
+.did b{color:var(--ink);font-weight:600}
+/* hire */
+.hire{padding:100px 0 80px;text-align:center;background:radial-gradient(50% 60% at 50% 40%,rgba(245,199,106,.12),transparent 70%)}
+.hire h2{font-size:clamp(36px,5vw,64px)!important}
+.hire .lede{margin:0 auto 26px}
+.hire ul{list-style:none;padding:0;margin:0 auto 30px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:820px}
+.hire .btns{justify-content:center}
+footer.site{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--mut);font-size:14px}
+footer.site ol{font:12.5px/1.6 var(--mono);color:var(--dim);padding-left:1.4em}
+footer.site ol a{color:var(--mut)}
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);width:100%;color:var(--ink)}
+dialog::backdrop{background:rgba(2,4,10,.88)}
+dialog .box{background:#070b18;border:1px solid rgba(245,199,106,.5);border-radius:18px;padding:14px;box-shadow:0 0 80px rgba(245,199,106,.18)}
+dialog video{width:100%;border-radius:10px;background:#000;aspect-ratio:16/9}
+dialog .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+dialog h2{font:700 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0}
+dialog p{margin:10px 2px 2px;font-size:14.5px;color:var(--mut)}
+
+@media (max-width:980px){
+  .hero{max-height:none;display:flex;flex-direction:column}
+  .hero-in{order:1;min-height:0}
+  #sky{order:2}
+  .legend{order:3}
+  .hero-in{grid-template-columns:1fr;padding:28px 20px 0;gap:22px}
+  #sky{position:relative;inset:auto;height:430px;display:block}
+  .legend{position:relative;left:auto;right:auto;bottom:auto;margin:0 20px 20px;max-width:none}
+  .hint{display:none}
+  .worlds{grid-template-columns:minmax(0,1fr);gap:0;padding:0}
+  .nav{top:0;z-index:20;padding:0;background:rgba(5,8,21,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav p{display:none}
+  .nav ol{display:flex;gap:16px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+  .nav ol::before{display:none}
+  .nav a{white-space:nowrap;gap:7px}
+  .content{padding:0 20px}
+  .cols{grid-template-columns:1fr}
+  .loop{grid-template-columns:1fr 1fr}
+  .orbitp{height:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .orbitp::before{display:none}
+  .orbitp .sun{position:static;transform:none;width:auto;grid-column:1/-1}
+  .sat{position:static;width:auto}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .hero-in{padding:22px 16px 0}
+  .content{padding:0 16px}
+  .legend{margin:0 16px 16px}
+  .legend ul{columns:2}
+  #sky{height:330px}
+  .film .frame::before{left:-6%;right:-6%}
+  .more,.stills{grid-template-columns:1fr 1fr}
+  .funnel li{grid-template-columns:1fr;gap:8px}
+  .decide,.loop{grid-template-columns:1fr}
+  .orbitp{grid-template-columns:1fr 1fr}
+  .btn{font-size:12.5px;padding:.9em 1.05em}
+  .film .btn{font-size:11.5px;padding:.85em .95em;letter-spacing:.06em}
+  .film .mini{padding:.55em .7em;font-size:10px}
+  .film .over{padding:30px 10px 10px}
+  .who .chips .chip+.chip{display:none}
+  .who .chips{margin-bottom:12px}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .hero{min-height:0;background:none}
+  #sky,.legend,.hint,.nav,.film video,.mini,.btns,dialog,#tip,.ss-bar{display:none!important}
+  .hero-in,.worlds,.cols{display:block}
+  .world,.crew{padding:20px 0;break-inside:avoid-page}
+  a{color:#000}
+  .grp,.loop li{background:none;border-color:#999}
+  .who,.film figcaption,.lede,.ag .does,.src,.shot figcaption,blockquote{color:#000;text-shadow:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+<section class="hero" id="film" aria-labelledby="hero-h">
+  <canvas id="sky" tabindex="0" role="img" aria-label="Interactive universe: Silvio Switha at the golden core, his 17 AI agents as moons on six rings, one ring per group, moon size by commits. Drag, or use the arrow keys, to rotate. The same data is in the list of agents below." aria-describedby="crew-h"></canvas>
+  <div class="hero-in">
+    <div class="who">
+      <div class="chips"><span class="chip live">Open to projects</span><span class="chip">Universo · his visual language</span></div>
+      <h1 id="hero-h">Silvio <b>Switha</b></h1>
+      <p class="role"><strong>AI entrepreneur, musician and producer.</strong> He built the universe his team ran Web Summit on.<sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup> He builds products, visualisations, videos and music with teams of AI agents, fast.</p>
+      <div class="btns">
+        <a class="btn" href="#contact">Hire him for a project</a>
+        <a class="btn ghost" href="#work">Fly to his worlds</a>
+      </div>
+    </div>
+    <figure class="film">
+      <div class="frame">
+        <div class="screen">
+          <video id="loop" muted loop playsinline preload="metadata" poster="/assets/media/know-the-reach-poster.jpg" aria-label="A silent 12 second loop from the film Know the Reach">
+            <source src="/assets/media/hero-loop.mp4" type="video/mp4">
+          </video>
+          <span class="chip tag">Film · Know the Reach</span>
+          <div class="over">
+            <a class="btn" href="/assets/media/know-the-reach-720p.mp4" data-film><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z"/></svg>Watch the film, 3:38</a>
+            <button class="mini" type="button" id="looptoggle" aria-pressed="false">Pause loop</button>
+          </div>
+        </div>
+      </div>
+      <figcaption><b>Know the Reach, by RiskMandate. Music and video by Silvio Switha.</b> Released on 13 November 2026.<sup class="s"><a href="#src-k" aria-label="Source K">K</a></sup> Listen on <a href="https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6">Spotify</a> · first part on <a href="https://www.youtube.com/watch?v=BjN-K-C2fsw">YouTube</a></figcaption>
+    </figure>
+  </div>
+  <aside class="legend" aria-labelledby="leg-h">
+    <h2 id="leg-h">Legend · six rings</h2>
+    <ul>
+      <li><i style="background:var(--lead)"></i>Lead</li><li><i style="background:var(--build)"></i>Build</li>
+      <li><i style="background:var(--creative)"></i>Creative</li><li><i style="background:var(--growth)"></i>Growth</li>
+      <li><i style="background:var(--operations)"></i>Operations</li><li><i style="background:var(--safeguards)"></i>Safeguards</li>
+    </ul>
+    <p>Moon size: commits. 17 agents, 13 running.<sup class="s"><a href="#src-n" aria-label="Source N">N</a></sup></p>
+  </aside>
+  <p class="hint" aria-hidden="true">Drag or use arrow keys to rotate</p>
+  <div id="tip" hidden></div>
+</section>
+
+<section class="crew" aria-labelledby="crew-h">
+  <div class="wrap">
+    <span class="chip">The universe, as a list</span>
+    <h2 id="crew-h">Seventeen agents in six rings</h2>
+    <p class="lede">Every agent drafts; Silvio sends. 17 agents, 13 of them running, with 320 commits on the team's site by the count in <i>Ten days at Web Summit</i>.<sup class="s"><a href="#src-n" aria-label="Source N">N</a></sup> The bars below use his dashboard's own count per agent, 341 in all, read on 16 November 2026.<sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup> Select an agent to swing its moon to the front of the universe.</p>
+    <ul class="groups" id="agentlist">
+      <li class="grp" style="color:var(--lead)"><h3><i></i>Lead · 1</h3><p>Leads the team</p><ul><li><button class="ag" type="button" data-role="conductor" data-group="lead" data-commits="75"><span class="top">conductor <span>75 commits</span></span><span class="bar"><i style="width:100%"></i></span><span class="does">conducts his agents and keeps his records</span></button></li></ul></li>
+      <li class="grp" style="color:var(--build)"><h3><i></i>Build · 4</h3><p>Builds the products</p><ul><li><button class="ag" type="button" data-role="dashboard" data-group="build" data-commits="62"><span class="top">dashboard <span>62 commits</span></span><span class="bar"><i style="width:83%"></i></span><span class="does">his command centre (UNIVERSO, X-Ray, Gravity), his dashboard and its links</span></button></li><li><button class="ag" type="button" data-role="dev" data-group="build" data-commits="40"><span class="top">dev <span>40 commits</span></span><span class="bar"><i style="width:53%"></i></span><span class="does">the team CRM's features and the site's tools</span></button></li><li><button class="ag" type="button" data-role="gravity" data-group="build" data-commits="0"><span class="top">gravity <span>0 commits</span></span><span class="bar"><i style="width:0"></i></span><span class="does">brings the Gravity universe to the Lisbon Tech Fringe site, as an adapter</span></button></li></ul></li>
+      <li class="grp" style="color:var(--creative)"><h3><i></i>Creative · 6</h3><p>Video, design and words</p><ul><li><button class="ag" type="button" data-role="video" data-group="creative" data-commits="32"><span class="top">video <span>32 commits</span></span><span class="bar"><i style="width:43%"></i></span><span class="does">the video pipeline to YouTube, Instagram, LinkedIn and the team site: titles, descriptions, shot lists, storyboards; he publishes</span></button></li><li><button class="ag" type="button" data-role="design" data-group="creative" data-commits="13"><span class="top">design <span>13 commits</span></span><span class="bar"><i style="width:17%"></i></span><span class="does">design work for PrompTugal.news, following the brand</span></button></li><li><button class="ag" type="button" data-role="instagram" data-group="creative" data-commits="1"><span class="top">instagram <span>1 commit</span></span><span class="bar"><i style="width:1%"></i></span><span class="does">drafts RiskMandate's Instagram posts and replies; he reviews and posts every one</span></button></li><li><button class="ag" type="button" data-role="editor" data-group="creative" data-commits="0"><span class="top">editor <span>0 commits</span></span><span class="bar"><i style="width:0"></i></span><span class="does">filters story candidates and drafts articles for PrompTugal.news</span></button></li><li><button class="ag" type="button" data-role="jornal" data-group="creative" data-commits="0"><span class="top">jornal <span>0 commits</span></span><span class="bar"><i style="width:0"></i></span><span class="does">scouts public stories with licensed photos for PrompTugal.news</span></button></li></ul></li>
+      <li class="grp" style="color:var(--growth)"><h3><i></i>Growth · 3</h3><p>Outreach and CRM</p><ul><li><button class="ag" type="button" data-role="outreach" data-group="growth" data-commits="27"><span class="top">outreach <span>27 commits</span></span><span class="bar"><i style="width:36%"></i></span><span class="does">targets, messages and follow-ups for the 50 target companies; he sends every email</span></button></li><li><button class="ag" type="button" data-role="crm" data-group="growth" data-commits="15"><span class="top">crm <span>15 commits</span></span><span class="bar"><i style="width:20%"></i></span><span class="does">keeps his outreach in the team CRM, with a morning summary in Portuguese; sends nothing</span></button></li><li><button class="ag" type="button" data-role="inbox" data-group="growth" data-commits="6"><span class="top">inbox <span>6 commits</span></span><span class="bar"><i style="width:8%"></i></span><span class="does">the only agent with his mailbox: reads and drafts, never sends</span></button></li></ul></li>
+      <li class="grp" style="color:var(--operations)"><h3><i></i>Operations · 2</h3><p>Operations and buying</p><ul><li><button class="ag" type="button" data-role="procurement" data-group="operations" data-commits="59"><span class="top">procurement <span>59 commits</span></span><span class="bar"><i style="width:79%"></i></span><span class="does">what the team buys: the merch print order; finds suppliers, drafts every message for him to send</span></button></li><li><button class="ag" type="button" data-role="local" data-group="operations" data-commits="0"><span class="top">local <span>0 commits</span></span><span class="bar"><i style="width:0"></i></span><span class="does">Algarve options: printers, ads, prices, lead times</span></button></li></ul></li>
+      <li class="grp" style="color:var(--safeguards)"><h3><i></i>Safeguards · 3</h3><p>Security and vaults</p><ul><li><button class="ag" type="button" data-role="gamma-ray" data-group="safeguards" data-commits="4"><span class="top">gamma-ray <span>4 commits</span></span><span class="bar"><i style="width:5%"></i></span><span class="does">GAMMA-Ray public scans of his own agents</span></button></li><li><button class="ag" type="button" data-role="sgit" data-group="safeguards" data-commits="4"><span class="top">sgit <span>4 commits</span></span><span class="bar"><i style="width:5%"></i></span><span class="does">his vault and its key</span></button></li><li><button class="ag" type="button" data-role="vault" data-group="safeguards" data-commits="3"><span class="top">vault <span>3 commits</span></span><span class="bar"><i style="width:4%"></i></span><span class="does">keeps his vaults (the videos vault) and their audits</span></button></li></ul></li>
+    </ul>
+    <p class="src">Source: <a href="/data/agents.json">/data/agents.json</a>, from his public dashboard (<a href="https://web-summit.sgit.ai/people/silvio/index.md">web-summit.sgit.ai/people/silvio</a>), read 16 November 2026. <a href="/agents/">More on his agents</a>.</p>
+  </div>
+</section>
+
+<div class="worlds">
+  <nav class="nav" aria-label="Worlds on this page">
+    <p>Fly to a world</p>
+    <ol>
+      <li><a href="#work" style="--c:var(--gold)"><span class="pl"></span>Universo</a></li>
+      <li><a href="#x-ray" style="--c:#5fd9c8"><span class="pl"></span>X-Ray</a></li>
+      <li><a href="#gravity" style="--c:#7cbcff"><span class="pl"></span>Gravity</a></li>
+      <li><a href="#know-the-reach" style="--c:#ffb36b"><span class="pl"></span>Know the Reach</a></li>
+      <li><a href="#music" style="--c:#b9a6ff"><span class="pl"></span>Music</a></li>
+      <li><a href="#how" style="--c:#4ee39a"><span class="pl"></span>How he works</a></li>
+      <li><a href="#web-summit" style="--c:#ff7d9c"><span class="pl"></span>Web Summit</a></li>
+      <li><a href="#contact" style="--c:#fff1c9"><span class="pl"></span>Hire</a></li>
+    </ol>
+  </nav>
+
+  <div class="content">
+    <section class="world" id="work" aria-labelledby="w1">
+      <div class="whead"><span class="globe" style="--c:#f5c76a" aria-hidden="true"></span><span class="chip">World 01 · the command centre</span></div>
+      <h2 id="w1">UNIVERSO: his team, drawn as a universe</h2>
+      <div class="cols">
+        <div>
+          <p>For Web Summit, Silvio directed his dashboard agent to build a command centre. Its first world is UNIVERSO: people are planets, their agents are moons, messages are flows, and agents without a behaviour policy are flagged.<sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup></p>
+          <p>Around it: tabs for X-Ray, Gamma-Ray, Swarm, videos, PrompTugal.news, the Lisbon Tech Fringe and the storm; tasks, workstreams, decisions, agents, Ask Claude and voice. Dark and light, phone and desktop.<sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup></p>
+          <ul class="facts"><li>People as planets</li><li>Agents as moons</li><li>Messages as flows</li><li>Policy gaps flagged</li></ul>
+          <p><a href="https://web-summit.sgit.ai/people/silvio/app/index.html">Open the live command centre</a></p>
+          <figure class="shot"><video controls muted playsinline preload="none" poster="/assets/work/command-centre-universo.jpg" width="1600" height="1000"><source src="/assets/media/universe-demo.mp4" type="video/mp4"></video><figcaption><b>Screen recording</b> · 45 s, silent: his universe and agent views explored on an iMac</figcaption></figure>
+        </div>
+        <figure class="shot"><img src="/assets/work/command-centre-universo.jpg" width="1600" height="1000" loading="lazy" alt="Screenshot of UNIVERSO: a dark galaxy view with a golden team core, people as planets on elliptical orbits, their agents as small moons, and red chips counting agents without a policy"><figcaption><b>Screenshot</b> · UNIVERSO · 16 Nov 2026</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="world" id="x-ray" aria-labelledby="w2">
+      <div class="whead"><span class="globe" style="--c:#5fd9c8" aria-hidden="true"></span><span class="chip">World 02 · the search</span></div>
+      <h2 id="w2">The X-Ray: what a company's agents can reach</h2>
+      <div class="cols">
+        <figure class="shot"><img src="/assets/work/command-centre-x-ray.jpg" width="1600" height="1000" loading="lazy" alt="Screenshot of the X-Ray: a search run by an orchestrator across four search agents, a radial map of what a company's AI agents can reach, and a mandate scenario panel"><figcaption><b>Screenshot</b> · X-Ray · 16 Nov 2026</figcaption></figure>
+        <div>
+          <p>A live search that maps what a company's AI agents can reach. It is its own world beside UNIVERSO and Gravity.<sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup></p>
+          <p>Name a company and the screen shows the run: the searches fan out, the sources are collected and sealed, and the reach is drawn as a map, with the gap between what an agent can do and what it was asked to do.</p>
+          <ul class="facts"><li>Live search</li><li>Reach map</li><li>Mandate and gap</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="world" id="gravity" aria-labelledby="w3">
+      <div class="whead"><span class="globe" style="--c:#7cbcff" aria-hidden="true"></span><span class="chip">World 03 · the library</span></div>
+      <h2 id="w3">Gravity: one universe, many sites</h2>
+      <div class="cols">
+        <div>
+          <p>Gravity is a reusable universe-visualisation library, in Portuguese and English. It is kept in one place and brought to other sites through adapters, for example the Lisbon Tech Fringe. It began as the Universe of the RiskMandate team, and was shown in Dinis Cruz's meeting deck of 10 November.<sup class="s"><a href="#src-g" aria-label="Source G">G</a></sup><sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup></p>
+          <svg class="gdia" viewBox="0 0 520 250" role="img" aria-labelledby="gd-t">
+            <title id="gd-t">Diagram: the Gravity library in one place, made of cores, centres of gravity, nodes, flows, lenses and plugins, reaches other sites through adapters, for example the Lisbon Tech Fringe</title>
+            <ellipse cx="150" cy="125" rx="128" ry="98" fill="none" stroke="#7cbcff" stroke-opacity=".35"/>
+            <ellipse cx="150" cy="125" rx="78" ry="58" fill="none" stroke="#7cbcff" stroke-opacity=".25" stroke-dasharray="3 4"/>
+            <circle cx="150" cy="125" r="26" fill="#f5c76a"/><text x="150" y="129" text-anchor="middle" fill="#1a1406" style="fill:#1a1406">CORE</text>
+            <circle cx="88" cy="88" r="7" fill="#5fd9c8"/><text x="58" y="70">CENTRES</text>
+            <circle cx="220" cy="98" r="6" fill="#b9a6ff"/><text x="200" y="80">NODES</text>
+            <path d="M150 125 Q190 165 214 172" stroke="#f5c76a" stroke-dasharray="3 3" fill="none"/><circle cx="214" cy="172" r="5" fill="#ff9e7a"/><text x="206" y="195">FLOWS</text>
+            <text x="34" y="182">LENSES</text><text x="104" y="246" class="m">+ plugins · PT and EN</text>
+            <path d="M282 125 H330" stroke="#aab4cb" stroke-width="1.5"/><path d="M326 120l7 5-7 5" fill="#aab4cb"/>
+            <rect x="338" y="60" width="172" height="44" rx="10" fill="rgba(124,188,255,.1)" stroke="#7cbcff" stroke-opacity=".6"/><text x="352" y="80">ADAPTER</text><text x="352" y="96" class="m">Lisbon Tech Fringe</text>
+            <rect x="338" y="146" width="172" height="44" rx="10" fill="none" stroke="#aab4cb" stroke-opacity=".5" stroke-dasharray="4 4"/><text x="352" y="166">ADAPTER</text><text x="352" y="182" class="m">your site (proposal)</text>
+          </svg>
+          <p><a href="https://web-summit.sgit.ai/lib/gravity/">See Gravity live</a></p>
+        </div>
+        <figure class="shot"><img src="/assets/work/gravity-library.jpg" width="1600" height="1000" loading="lazy" alt="Screenshot of the Gravity library page: a short explanation of cores, centres, nodes and flows, its versions, and a code sample for using it"><figcaption><b>Screenshot</b> · Gravity library · 16 Nov 2026</figcaption></figure>
+      </div>
+      <div class="more">
+        <figure class="shot"><img src="/assets/work/design-lab.jpg" width="1440" height="900" loading="lazy" alt="Screenshot of the PrompTugal.news design lab, with seven options for the front page"><figcaption>His PrompTugal.news design lab: seven front-page options, A to G. The team site's home page designs A to G are his too.<sup class="s"><a href="#src-l" aria-label="Source L">L</a></sup></figcaption></figure>
+        <figure class="shot"><img src="/assets/work/video-library.jpg" width="1440" height="900" loading="lazy" alt="Screenshot of the team's video library: videos ready to post, filtered by channel"><figcaption>The video pipeline to YouTube, Instagram and LinkedIn, run by his video agent; he publishes.<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup></figcaption></figure>
+        <figure class="shot"><img src="/assets/work/riskmandate-explicado.jpg" width="1440" height="900" loading="lazy" alt="Screenshot of RiskMandate explicado, a page in Portuguese explaining the problem, the record and the gap"><figcaption>"RiskMandate explicado", in Portuguese, built by his conductor.<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="world" id="know-the-reach" aria-labelledby="w4">
+      <div class="whead"><span class="globe" style="--c:#ffb36b" aria-hidden="true"></span><span class="chip">World 04 · the film</span></div>
+      <h2 id="w4">Know the Reach: how 2,300 words became a film</h2>
+      <p class="lede">A night in Lisbon turning to morning; a software agent shown as golden light; a human reviewer; reach, mandate and the gap. Music and video by Silvio Switha. The first part of the video is the production audit of 14 November.<sup class="s"><a href="#src-k" aria-label="Source K">K</a></sup></p>
+      <ol class="funnel" aria-label="From his direction to one film">
+        <li><span class="n">78<small>messages · about 2,300 words of his direction</small></span><span class="dots" data-n="78" style="--c:#aab4cb"></span></li>
+        <li><span class="n">43<small>generated images · plus 49 reused</small></span><span class="dots" data-n="43" data-o="49" style="--c:#f5c76a"></span></li>
+        <li><span class="n">16<small>motion clips · 108.7 s</small></span><span class="dots" data-n="16" style="--c:#5fd9c8"></span></li>
+        <li><span class="n">21<small>edited exports</small></span><span class="dots" data-n="21" style="--c:#b9a6ff"></span></li>
+        <li><span class="n">1<small>film · 3 min 38 s</small></span><span class="dots" data-n="1" data-big="1"></span></li>
+      </ol>
+      <ul class="facts"><li>1,236 Runway credits</li><li>One 8-second clip tested first</li><li>4 font families tested · Inter SemiBold won</li></ul>
+      <p>Paid generation was kept to 1,236 Runway credits by reusing 49 existing images and testing one eight-second clip first. Eight decisions shaped the film. Two of them:<sup class="s"><a href="#src-k" aria-label="Source K">K</a></sup></p>
+      <div class="decide">
+        <div><b>The song leads</b>The original song stays the timing reference.</div>
+        <div><b>Accurate claims</b>The video does not overclaim what RiskMandate does.</div>
+      </div>
+      <div class="stills">
+        <img src="/assets/media/stills/film-42.jpg" width="1280" height="720" loading="lazy" alt="Film still: a woman at a desk at night studies glowing cyan blocks joined by lines. Subtitle: But nobody wrote down what they're allowed to touch or understand.">
+        <img src="/assets/media/stills/film-56.jpg" width="1280" height="720" loading="lazy" alt="Film still: a corridor of server racks with glowing panels. Subtitle: Know the reach, define the mandate,">
+        <img src="/assets/media/stills/film-84.jpg" width="1280" height="720" loading="lazy" alt="Film still: a boardroom at night, a laptop glowing gold on the table. Subtitle: We put our own agent on the table, and we measured it to death:">
+        <img src="/assets/media/stills/film-112.jpg" width="1280" height="720" loading="lazy" alt="Film still: golden shapes on a table over Lisbon at night, a reviewer at a laptop. Subtitle: Close the gap before it's too late.">
+        <img src="/assets/media/stills/film-168.jpg" width="1280" height="720" loading="lazy" alt="Film still: a glowing network over a table at night. Subtitle: We light up where the edges are.">
+        <img src="/assets/media/stills/film-20.jpg" width="1280" height="720" loading="lazy" alt="Film still: a glass on a table in a dark room lit by cyan light, Lisbon at night outside. Caption: RiskMandate documents the difference for people to review.">
+      </div>
+      <p class="src">Film stills from Know the Reach. Figures from <a href="#src-k">Know the Reach</a>, Dinis Cruz, 15 Nov 2026.</p>
+      <p><a class="btn" href="/assets/media/know-the-reach-720p.mp4" data-film><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z"/></svg>Watch the film, 3:38</a></p>
+    </section>
+
+    <section class="world" id="music" aria-labelledby="w5">
+      <div class="whead"><span class="globe" style="--c:#b9a6ff" aria-hidden="true"></span><span class="chip">World 05 · twenty years</span></div>
+      <h2 id="w5">Music: a singer and a producer</h2>
+      <div class="cols">
+        <div>
+          <p>Silvio has been a musician for twenty years, as a singer and a producer.<sup class="s"><a href="#src-h" aria-label="Source H">H</a></sup></p>
+          <blockquote>"One of the best musicians I know. He runs one of the most successful wedding bands in the Algarve, he is one of the best singers I know, and he is a great producer."<footer>Dinis Cruz, <a href="https://newsroom.sgit.ai/articles/every-hour-is-twenty-years.html">Every hour is twenty years</a>, 15 Nov 2026</footer></blockquote>
+          <p>Know the Reach is RiskMandate's song: music and video by Silvio, released on Spotify on 13 November 2026.<sup class="s"><a href="#src-k" aria-label="Source K">K</a></sup> The lyrics were written in a ChatGPT session with his guidance. In Dinis Cruz's words: "The chorus, the structure, the pacing: those are creative decisions, and they are his."<sup class="s"><a href="#src-h" aria-label="Source H">H</a></sup></p>
+          <p><a href="https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6">Listen on Spotify</a> · <a href="/music/">More on his music</a></p>
+        </div>
+        <div>
+          <div class="disc"><img src="/assets/photos/know-the-reach-cover.jpg" width="1254" height="1254" loading="lazy" alt="The cover of Know the Reach: a glowing square of light over Lisbon at night, under a storm"></div>
+          <figure class="shot" style="max-width:340px;margin-top:26px"><img src="/assets/photos/know-the-reach-in-the-car.jpg" width="1600" height="1200" loading="lazy" alt="A car dashboard screen playing Know the Reach by RiskMandate"><figcaption><b>Photo</b> · the song on a car screen</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="world" id="how" aria-labelledby="w6">
+      <div class="whead"><span class="globe" style="--c:#4ee39a" aria-hidden="true"></span><span class="chip">World 06 · a producer's way</span></div>
+      <h2 id="w6">How he works: vision first, then many takes</h2>
+      <blockquote>"AI changed the speed, not the vision. Every hour he spent carried twenty years of experience."<footer>Dinis Cruz, <a href="https://newsroom.sgit.ai/articles/every-hour-is-twenty-years.html">Every hour is twenty years</a>, 15 Nov 2026</footer></blockquote>
+      <ol class="loop">
+        <li><h3>Vision</h3><p>He knows what the piece is for: the song leads, the claims stay accurate.</p></li>
+        <li><h3>Fast feedback</h3><p>He works "like a producer with immediate feedback, and stayed in flow".<sup class="s"><a href="#src-h" aria-label="Source H">H</a></sup></p></li>
+        <li><h3>Variations</h3><p>"Dozens, if not hundreds, of variations".<sup class="s"><a href="#src-h" aria-label="Source H">H</a></sup></p></li>
+        <li><h3>Choosing</h3><p>The choices are his; the agents draft, and he sends every message.<sup class="s"><a href="#src-n" aria-label="Source N">N</a></sup></p></li>
+      </ol>
+      <p class="src">Quotes in this world: Dinis Cruz, <a href="#src-h">Every hour is twenty years</a>.</p>
+      <div class="cols">
+        <div>
+          <p>His brief on the team site says it plainly: "Silvio's project-management workflows are some of the best around."<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup> His own line is shorter:</p>
+          <blockquote>"Agents with a mandate."<footer>Silvio Switha<sup class="s"><a href="#src-m" aria-label="Source M">M</a></sup></footer></blockquote>
+          <p>Each agent has a role, a written job and limits: the inbox agent reads and drafts but never sends; the CRM agent sends nothing. He reviews and sends.<sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup> <a href="/how-he-works/">More on how he works</a></p>
+        </div>
+        <figure class="shot"><img src="/assets/photos/silvio-at-the-desk.jpg" width="858" height="1600" loading="lazy" style="aspect-ratio:4/5;object-fit:cover;object-position:50% 25%" alt="Silvio at a desk in a red RiskMandate T-shirt, hand on his chin, next to the computer showing his universe"><figcaption><b>Photo</b> · at the desk, beside his universe</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="world" id="web-summit" aria-labelledby="w7">
+      <div class="whead"><span class="globe" style="--c:#ff7d9c" aria-hidden="true"></span><span class="chip">World 07 · Lisbon, 9 to 12 Nov 2026</span></div>
+      <h2 id="w7">Web Summit: ten days, six people, about 250 agents</h2>
+      <p class="lede">Silvio was one of the six people who ran ten days at Web Summit with around 250 agents, for RiskMandate.<sup class="s"><a href="#src-n" aria-label="Source N">N</a></sup></p>
+      <div class="orbitp">
+        <div class="sun"><b>Agents with a mandate</b><span class="src">Web Summit Lisbon 2026</span></div>
+        <figure class="sat" style="left:2%;top:30%;--s:128px"><img src="/assets/photos/silvio-smile.jpg" width="859" height="1600" loading="lazy" alt="Silvio Switha smiling, in a black hoodie, at the entrance to the venue"><figcaption>Arriving at the venue</figcaption></figure>
+        <figure class="sat" style="left:17%;top:0;--s:112px"><img src="/assets/photos/silvio-at-the-stand-2.jpg" width="588" height="1600" loading="lazy" alt="Silvio at the RiskMandate stand, both thumbs up"><figcaption>At the stand</figcaption></figure>
+        <figure class="sat" style="left:43%;top:-2%;--s:100px"><img src="/assets/photos/silvio-main-stage.jpg" width="693" height="1600" loading="lazy" alt="Silvio in the arena by the Web Summit main stage, with his badge"><figcaption>By the main stage</figcaption></figure>
+        <figure class="sat" style="right:16%;top:2%;--s:116px"><img src="/assets/photos/silvio-agents-under-policy.jpg" width="804" height="1600" loading="lazy" style="object-position:50% 22%" alt="Silvio from behind, wearing a black hoodie that reads Agents under policy, RiskMandate, with a QR code"><figcaption>Agents under policy</figcaption></figure>
+        <figure class="sat" style="right:1%;top:36%;--s:132px"><img src="/assets/photos/silvio-at-the-arena.jpg" width="667" height="1600" loading="lazy" alt="Silvio smiling outside the Web Summit arena, with his lanyard"><figcaption>Outside the arena</figcaption></figure>
+        <figure class="sat" style="right:20%;bottom:0;--s:108px"><img src="/assets/photos/silvio-backstage.jpg" width="615" height="1600" loading="lazy" alt="Silvio leaning forward, smiling, in a black top, backstage at Web Summit"><figcaption>Backstage</figcaption></figure>
+        <figure class="sat" style="left:43%;bottom:-2%;--s:100px"><img src="/assets/photos/silvio-your-ai-has-access.jpg" width="963" height="1600" loading="lazy" alt="Silvio at a table in a red T-shirt that reads Your AI has access. Does it have permission?"><figcaption>Your AI has access</figcaption></figure>
+        <figure class="sat" style="left:18%;bottom:2%;--s:112px"><img src="/assets/photos/silvio-at-the-stand.jpg" width="663" height="1600" loading="lazy" alt="Silvio sitting on a stool at the RiskMandate stand, arms crossed, red T-shirt"><figcaption>On the stand stool</figcaption></figure>
+      </div>
+      <h3 class="chip" style="margin:30px 0 4px">What he did there</h3>
+      <ul class="did">
+        <li><b>Ideas, outreach, local work in the Algarve and video</b> for RiskMandate.<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup></li>
+        <li><b>The merch print order</b>, through his procurement agent.<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup></li>
+        <li><b>Outreach to 50 target companies</b> in the team's CRM; he sent every email.<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup></li>
+        <li><b>The video pipeline</b> to YouTube, Instagram and LinkedIn.<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup></li>
+        <li><b>"RiskMandate explicado"</b>, in Portuguese, built by his conductor.<sup class="s"><a href="#src-b" aria-label="Source B">B</a></sup></li>
+        <li><b>His command centre</b>: UNIVERSO, X-Ray and Gravity.<sup class="s"><a href="#src-p" aria-label="Source P">P</a></sup></li>
+      </ul>
+      <p><a href="/photos-and-videos/">All photos and videos</a></p>
+    </section>
+
+    <section class="world hire" id="contact" aria-labelledby="w8">
+      <span class="chip gold">World 08 · your project</span>
+      <h2 id="w8">Hire Silvio</h2>
+      <p class="lede">He is looking for projects, as a professional and consultant. Bring a vision; he brings a team of agents and a producer's ear.</p>
+      <ul><li class="chip">Command centres and dashboards</li><li class="chip">Data visualisations</li><li class="chip">Product videos and music</li><li class="chip">Agent teams</li><li class="chip">Design</li></ul>
+      <div class="btns"><a class="btn" href="/hire/">How to hire him</a><a class="btn ghost" href="/agents/">Ask your AI about him</a></div>
+      <p class="src" style="margin-top:22px">Contact details to follow.</p>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Every figure on this page names its source. Sources, read on the dates shown:</p>
+    <ol>
+      <li id="src-k">[K] <a href="https://newsroom.sgit.ai/articles/know-the-reach.html">Know the Reach</a>, Dinis Cruz, newsroom.sgit.ai, 15 Nov 2026</li>
+      <li id="src-h">[H] <a href="https://newsroom.sgit.ai/articles/every-hour-is-twenty-years.html">Every hour is twenty years</a>, Dinis Cruz, newsroom.sgit.ai, 15 Nov 2026</li>
+      <li id="src-n">[N] <a href="https://newsroom.sgit.ai/articles/ten-days-at-web-summit.html">Ten days at Web Summit</a>, newsroom.sgit.ai, read 16 Nov 2026</li>
+      <li id="src-p">[P] <a href="https://web-summit.sgit.ai/people/silvio/index.html">His dashboard on the team site</a> and <a href="https://web-summit.sgit.ai/people/silvio/app/index.html">command centre</a>, read 16 Nov 2026</li>
+      <li id="src-g">[G] <a href="https://web-summit.sgit.ai/lib/gravity/">Gravity</a>, read 16 Nov 2026</li>
+      <li id="src-l">[L] <a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">The PrompTugal.news design lab</a>, read 16 Nov 2026</li>
+      <li id="src-b">[B] <a href="https://web-summit.sgit.ai/brief-silvio/index.html">His brief</a>, [T] <a href="https://web-summit.sgit.ai/team/silvio/index.html">his role page</a>, read 16 Nov 2026</li>
+      <li id="src-m">[M] <a href="https://web-summit.sgit.ai/meet/silvio/index.html">Meet Silvio</a>, read 16 Nov 2026</li>
+    </ol>
+    <p>Screenshots of his work dated 16 Nov 2026. Film and film stills: Know the Reach, by RiskMandate, music and video by Silvio Switha.</p>
+    <p>Version __VERSION__ · Code Apache-2.0, text CC BY 4.0 · <a href="/llms.txt">llms.txt</a> · <a href="/index.md">index.md</a> · Design: Universe</p>
+  </div>
+</footer>
+
+<dialog id="filmbox" aria-labelledby="fb-h">
+  <div class="box">
+    <div class="bar"><h2 id="fb-h">Know the Reach · 3:38 · with sound</h2><button class="mini" type="button" id="fb-x">Close</button></div>
+    <video id="fullfilm" controls playsinline preload="none" poster="/assets/media/know-the-reach-poster.jpg"><source src="/assets/media/know-the-reach-720p.mp4" type="video/mp4"></video>
+    <p>Know the Reach, by RiskMandate. Music and video by Silvio Switha. Listen on <a href="https://open.spotify.com/track/1J6zgXwUBtbuUkqUMi6wI6">Spotify</a> · first part on <a href="https://www.youtube.com/watch?v=BjN-K-C2fsw">YouTube</a></p>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const mq = matchMedia('(prefers-reduced-motion: reduce)');
+  let reduced = mq.matches;
+
+  /* ---- film lightbox ---- */
+  const dlg = document.getElementById('filmbox'), full = document.getElementById('fullfilm');
+  let opener = null;
+  document.querySelectorAll('[data-film]').forEach(a => a.addEventListener('click', e => {
+    if (typeof dlg.showModal !== 'function') return;
+    e.preventDefault(); opener = a; dlg.showModal();
+    const p = full.play(); if (p) p.catch(() => {});
+  }));
+  document.getElementById('fb-x').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', () => { full.pause(); if (opener) opener.focus(); });
+
+  /* ---- hero loop ---- */
+  const loop = document.getElementById('loop'), lt = document.getElementById('looptoggle');
+  function setLoop(on) {
+    if (on) { const p = loop.play(); if (p) p.catch(() => {}); } else loop.pause();
+    lt.textContent = on ? 'Pause loop' : 'Play loop'; lt.setAttribute('aria-pressed', String(!on));
+  }
+  setLoop(!reduced);
+  lt.addEventListener('click', () => setLoop(loop.paused));
+
+  /* ---- funnel dots ---- */
+  document.querySelectorAll('.dots').forEach(d => {
+    const n = +d.dataset.n, o = +(d.dataset.o || 0);
+    let h = '';
+    if (d.dataset.big) h = '<i class="big"></i>';
+    else { for (let i = 0; i < n; i++) h += '<i></i>'; for (let i = 0; i < o; i++) h += '<i class="o"></i>'; }
+    if (o) h += '<em>filled: generated · ring: reused</em>';
+    d.innerHTML = h; d.setAttribute('aria-hidden', 'true');
+  });
+
+  /* ---- worlds nav ---- */
+  const navLinks = [...document.querySelectorAll('.nav a')];
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.setAttribute('aria-current', a.hash === '#' + e.target.id ? 'true' : 'false'));
+      const cur = navLinks.find(a => a.hash === '#' + e.target.id);
+      if (cur && innerWidth <= 980) cur.parentNode.parentNode.scrollTo({ left: cur.offsetLeft - 16, behavior: reduced ? 'auto' : 'smooth' });
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('.world').forEach(s => io.observe(s));
+  }
+
+  /* ---- the universe ---- */
+  const cv = document.getElementById('sky'), ctx = cv.getContext('2d');
+  if (!ctx) return;
+  const hero = cv.parentNode, tip = document.getElementById('tip'), filmEl = document.querySelector('.film .screen');
+  const ORDER = ['lead', 'build', 'creative', 'growth', 'operations', 'safeguards'];
+  const css = getComputedStyle(document.documentElement);
+  const COL = {}; ORDER.forEach(g => COL[g] = css.getPropertyValue('--' + g).trim());
+  const btns = [...document.querySelectorAll('#agentlist .ag')];
+  let agents = btns.map(b => ({ role: b.dataset.role, group: b.dataset.group, commits: +b.dataset.commits, does: b.querySelector('.does').textContent }));
+  let W = 0, H = 0, dpr = 1, cx = 0, cy = 0, R = 200, F = 600, wide = true;
+  let tilt = 0.44, spin = 0, t = 0, last = 0, stars = [], hi = -1, target = null, visible = true, running = false;
+
+  function layout() {
+    agents.forEach(a => { a.ring = ORDER.indexOf(a.group); });
+    ORDER.forEach((g, ri) => {
+      const ms = agents.filter(a => a.ring === ri);
+      ms.forEach((a, k) => { a.a0 = (k / ms.length) * Math.PI * 2 + ri * 1.1; });
+    });
+  }
+  function size() {
+    const r = cv.getBoundingClientRect();
+    W = r.width; H = r.height; dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    wide = W > 980;
+    if (wide) { cx = Math.max(W * 0.3, 340); cy = H * 0.68; R = Math.min(W * 0.25, 380, (H - cy - 30) / 0.5); }
+    else { cx = W / 2; cy = H * 0.5; R = Math.min(W * 0.44, 230); }
+    F = R * 4.2;
+    let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    stars = Array.from({ length: Math.round(W * H / 4200) }, () => ({ x: rnd() * W, y: rnd() * H, r: rnd() * 1.2 + .2, p: rnd() * 6.28, b: rnd() * .6 + .25 }));
+    draw();
+  }
+  const ringR = i => R * (0.3 + i * 0.14);
+  const speed = i => 0.11 / Math.sqrt(1 + i * 0.9);
+  function proj(r, a) {
+    const X = r * Math.cos(a), Z = r * Math.sin(a), s = F / (F - Z * Math.cos(tilt));
+    return { x: cx + X * s, y: cy + Z * Math.sin(tilt) * s, s, z: Z / R };
+  }
+  const moonR = c => (wide ? 3.4 : 2.8) + Math.sqrt(c) * (wide ? 1.35 : 1.05);
+  const angOf = a => a.a0 + spin + t * speed(a.ring);
+
+  function rgba(hex, al) { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${al})`; }
+  function orbit(i, half) {
+    const r = ringR(i); ctx.beginPath();
+    const a0 = half ? 0 : 0, a1 = half ? Math.PI : Math.PI * 2;
+    for (let k = 0; k <= 96; k++) { const p = proj(r, a0 + (a1 - a0) * k / 96); k ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y); }
+    ctx.strokeStyle = rgba(COL[ORDER[i]], half ? 0.32 : 0.2); ctx.lineWidth = 1; ctx.stroke();
+  }
+  function chip(x, y, txt, col, al, strong) {
+    ctx.font = (strong ? '700 ' : '600 ') + (wide ? 10.5 : 9.5) + 'px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '1px';
+    const w = ctx.measureText(txt).width + 14, h = wide ? 19 : 17;
+    if (x + w > W - 4) x = W - 4 - w;
+    ctx.globalAlpha = al;
+    ctx.fillStyle = 'rgba(7,11,25,.88)'; ctx.strokeStyle = rgba(col, strong ? 0.95 : 0.55);
+    ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x, y, w, h, 5) : ctx.rect(x, y, w, h); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = strong ? '#fff' : '#e3e8f4'; ctx.textBaseline = 'middle'; ctx.fillText(txt, x + 7, y + h / 2 + .5);
+    ctx.globalAlpha = 1;
+  }
+  function moon(a) {
+    const p = a.p, m = moonR(a.commits) * p.s, col = COL[a.group], far = p.z < 0;
+    const al = far ? 0.55 + 0.45 * (1 + p.z) : 1;
+    ctx.globalAlpha = al;
+    const ringed = a.commits >= 40;
+    if (ringed) { ctx.beginPath(); ctx.ellipse(p.x, p.y, m * 2.1, m * .55, -.35, Math.PI, Math.PI * 2); ctx.strokeStyle = rgba(col, .7); ctx.lineWidth = 1.4; ctx.stroke(); }
+    const g = ctx.createRadialGradient(p.x - m * .35, p.y - m * .4, m * .1, p.x, p.y, m * (far ? 1.35 : 1.05));
+    g.addColorStop(0, '#ffffff'); g.addColorStop(far ? .15 : .25, col); g.addColorStop(far ? .6 : .8, rgba(col, far ? .55 : .95)); g.addColorStop(1, rgba(col, 0));
+    ctx.shadowColor = col; ctx.shadowBlur = far ? 4 : 14;
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, m * (far ? 1.35 : 1.05), 0, 7); ctx.fill();
+    ctx.shadowBlur = 0;
+    if (ringed) { ctx.beginPath(); ctx.ellipse(p.x, p.y, m * 2.1, m * .55, -.35, 0, Math.PI); ctx.strokeStyle = rgba(col, .85); ctx.stroke(); }
+    if (a.i === hi) { ctx.beginPath(); ctx.arc(p.x, p.y, m + 7, 0, 7); ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5; ctx.stroke(); }
+    ctx.globalAlpha = 1;
+  }
+  function draw() {
+    if (!W) return;
+    ctx.clearRect(0, 0, W, H);
+    for (const s of stars) { ctx.globalAlpha = s.b * (reduced ? 1 : .75 + .25 * Math.sin(t * 1.3 + s.p)); ctx.fillStyle = '#dfe8ff'; ctx.fillRect(s.x, s.y, s.r, s.r); }
+    ctx.globalAlpha = 1;
+    agents.forEach((a, i) => { a.i = i; a.p = proj(ringR(a.ring), angOf(a)); });
+    // the film's orbit (desktop): the film panel sits on the outer orbit
+    if (wide && filmEl) {
+      const hr = hero.getBoundingClientRect(), fr = filmEl.getBoundingClientRect();
+      const px = fr.left + fr.width / 2 - hr.left, py = fr.top + fr.height / 2 - hr.top, d = Math.hypot(px - cx, py - cy);
+      ctx.beginPath(); ctx.ellipse(cx, cy, d, d * .22, Math.atan2(py - cy, px - cx), 0, 7);
+      ctx.strokeStyle = 'rgba(245,199,106,.22)'; ctx.setLineDash([2, 6]); ctx.stroke(); ctx.setLineDash([]);
+    }
+    for (let i = 0; i < 6; i++) orbit(i, false);
+    // flows from the core: he directs every agent
+    agents.forEach(a => {
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.quadraticCurveTo((cx + a.p.x) / 2, (cy + a.p.y) / 2 - 30 * a.p.s, a.p.x, a.p.y);
+      ctx.strokeStyle = rgba(COL[a.group], a.i === hi ? .6 : .1); ctx.lineWidth = a.i === hi ? 1.4 : 1; ctx.stroke();
+      if (!reduced) { const k = (t * .22 + a.i * .137) % 1, qx = (cx + a.p.x) / 2, qy = (cy + a.p.y) / 2 - 30 * a.p.s;
+        const x = (1 - k) * (1 - k) * cx + 2 * (1 - k) * k * qx + k * k * a.p.x, y = (1 - k) * (1 - k) * cy + 2 * (1 - k) * k * qy + k * k * a.p.y;
+        ctx.fillStyle = rgba(COL[a.group], .8 * Math.sin(k * Math.PI)); ctx.beginPath(); ctx.arc(x, y, 1.4, 0, 7); ctx.fill(); }
+    });
+    const sorted = agents.slice().sort((p, q) => p.p.z - q.p.z);
+    sorted.filter(a => a.p.z < 0).forEach(moon);
+    // the core
+    const cr = R * (wide ? .12 : .13), glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, cr * 5);
+    glow.addColorStop(0, 'rgba(255,214,130,.55)'); glow.addColorStop(.25, 'rgba(245,170,70,.18)'); glow.addColorStop(1, 'rgba(245,170,70,0)');
+    ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(cx, cy, cr * 5, 0, 7); ctx.fill();
+    const pulse = reduced ? 1 : 1 + .03 * Math.sin(t * 1.6);
+    const sun = ctx.createRadialGradient(cx - cr * .3, cy - cr * .35, cr * .1, cx, cy, cr * pulse);
+    sun.addColorStop(0, '#fffbe8'); sun.addColorStop(.45, '#ffd57a'); sun.addColorStop(.85, '#f0a53c'); sun.addColorStop(1, '#c97a1e');
+    ctx.shadowColor = '#ffc861'; ctx.shadowBlur = 40; ctx.fillStyle = sun; ctx.beginPath(); ctx.arc(cx, cy, cr * pulse, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
+    for (let i = 0; i < 6; i++) orbit(i, true);
+    sorted.filter(a => a.p.z >= 0).forEach(moon);
+    // labels
+    sorted.forEach(a => {
+      const show = a.i === hi || (wide ? (a.commits >= 4 || a.p.z > .2) : a.commits >= 27);
+      if (!show) return;
+      const m = moonR(a.commits) * a.p.s;
+      chip(a.p.x + m + 6, a.p.y - 9, a.role.toUpperCase() + ' ' + a.commits, COL[a.group], a.i === hi ? 1 : (a.p.z < 0 ? .55 : .9), a.i === hi);
+    });
+    chip(cx - (wide ? 58 : 50), cy + cr + 12, 'SILVIO · 17 AGENTS', '#f5c76a', 1, true);
+  }
+  function frame(now) {
+    running = false;
+    const dt = Math.min((now - (last || now)) / 1000, .05); last = now;
+    if (!reduced) t += dt;
+    if (target !== null) {
+      const d = target - spin; spin += reduced ? d : d * Math.min(1, dt * 4);
+      if (Math.abs(d) < .002) { spin = target; target = null; }
+    }
+    draw();
+    if (visible && !document.hidden && (!reduced || target !== null)) kick();
+    else last = 0;
+  }
+  function kick() { if (!running) { running = true; requestAnimationFrame(frame); } }
+
+  // focus an agent: swing its moon to the front
+  function focusAgent(i, swing) {
+    hi = i; btns.forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
+    if (i >= 0 && swing) {
+      const a = agents[i], cur = angOf(a), want = Math.PI / 2;
+      let d = ((want - cur) % (Math.PI * 2) + Math.PI * 3) % (Math.PI * 2) - Math.PI;
+      target = spin + d;
+    }
+    kick(); draw();
+  }
+  btns.forEach((b, i) => {
+    b.addEventListener('click', () => focusAgent(hi === i ? -1 : i, true));
+    b.addEventListener('focus', () => focusAgent(i, true));
+    b.addEventListener('mouseenter', () => { hi = i; draw(); });
+  });
+
+  // drag and keys
+  let drag = null;
+  cv.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, s: spin, t: tilt }; target = null; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointerup', () => { drag = null; });
+  cv.addEventListener('pointercancel', () => { drag = null; });
+  cv.addEventListener('pointermove', e => {
+    if (drag) {
+      spin = drag.s + (e.clientX - drag.x) * .008;
+      tilt = Math.max(.16, Math.min(.95, drag.t - (e.clientY - drag.y) * .004));
+      draw(); return;
+    }
+    const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    let best = -1, bd = 1e9;
+    agents.forEach((a, i) => { const d = Math.hypot(a.p.x - x, a.p.y - y); if (d < moonR(a.commits) * a.p.s + 10 && d < bd) { bd = d; best = i; } });
+    if (best !== hi) { hi = best; draw(); }
+    if (best >= 0) {
+      const a = agents[best], hr = hero.getBoundingClientRect();
+      tip.hidden = false; tip.innerHTML = `<b style="color:${COL[a.group]}">${a.role} · ${a.commits} commits</b>${a.does}`;
+      tip.style.left = Math.min(e.clientX - hr.left + 14, hr.width - 260) + 'px'; tip.style.top = (e.clientY - hr.top + 14) + 'px';
+    } else tip.hidden = true;
+  });
+  cv.addEventListener('pointerleave', () => { tip.hidden = true; });
+  cv.addEventListener('keydown', e => {
+    const k = e.key; if (!/^Arrow/.test(k)) return;
+    e.preventDefault(); target = null;
+    if (k === 'ArrowLeft') spin -= .2; if (k === 'ArrowRight') spin += .2;
+    if (k === 'ArrowUp') tilt = Math.min(.95, tilt + .06); if (k === 'ArrowDown') tilt = Math.max(.16, tilt - .06);
+    draw();
+  });
+
+  if ('IntersectionObserver' in window) new IntersectionObserver(es => { visible = es[0].isIntersecting; if (visible) kick(); }).observe(cv);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) kick(); });
+  mq.addEventListener && mq.addEventListener('change', e => { reduced = e.matches; setLoop(!reduced); kick(); });
+  if ('ResizeObserver' in window) new ResizeObserver(size).observe(cv); else addEventListener('resize', size);
+  layout(); size(); kick();
+
+  // the data: /data/agents.json (the list above is the static fallback)
+  fetch('/data/agents.json').then(r => r.ok ? r.json() : Promise.reject()).then(d => {
+    if (!d || !Array.isArray(d.agents)) return;
+    const by = {}; d.agents.forEach(a => by[a.role] = a);
+    agents.forEach(a => { const s = by[a.role]; if (s) { a.commits = +s.commits || 0; a.group = ORDER.includes(s.group) ? s.group : a.group; a.does = s.does || a.does; } });
+    layout(); draw();
+  }).catch(() => {});
+})();
+</script>
+</body>
+</html>
