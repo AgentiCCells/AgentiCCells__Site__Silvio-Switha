@@ -25,6 +25,17 @@ for (const f of [...files, 'hub.json', 'README.md']) {
     if (!/<html lang="/.test(s)) fail(`${f}: no lang on <html>`);
     for (const m of s.matchAll(/<script[^>]+src="([^"]+)"/g)) if (/^(https?:)?\/\//.test(m[1])) fail(`${f}: third-party script ${m[1]}`);
     for (const m of s.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g)) if (/^(https?:)?\/\//.test(m[1])) fail(`${f}: third-party stylesheet ${m[1]}`);
+    // Link previews (Open Graph), 2026-11-17, after site@AgentiCCells.gabriel-dacruz v0.1.10:
+    // WhatsApp drops images over 300 KB and shows nothing for a page without these tags.
+    const meta = k => (s.match(new RegExp(`<meta (?:property|name)="${k}" content="([^"]*)"`)) || [])[1];
+    for (const k of ['og:title', 'og:description', 'og:url', 'og:image', 'og:image:width', 'og:image:height', 'twitter:card']) if (!meta(k)) fail(`${f}: no ${k}`);
+    const ogImage = meta('og:image');
+    if (ogImage) {
+      const live = (() => { try { return JSON.parse(readFileSync('hub.json', 'utf8')).live_address; } catch { return ''; } })();
+      if (!/^https:\/\//.test(ogImage)) fail(`${f}: og:image must be an absolute https URL (${ogImage})`);
+      else if (!live || !ogImage.startsWith(live + '/')) fail(`${f}: og:image is not served by this site (${ogImage})`);
+      else { const p = join('_site', ogImage.slice(live.length)); if (!existsSync(p)) fail(`${f}: og:image not in the built site (${p})`); else if (statSync(p).size > 300 * 1024) fail(`${f}: og:image over 300 KB (${statSync(p).size} bytes)`); }
+    }
     for (const m of s.matchAll(/(?:href|src)="([^"#?]+)/g)) {
       const u = m[1]; if (/^(https?:|mailto:|data:|\/\/)/.test(u)) continue;
       const target = u.startsWith('/') ? join('_site', u) : join(dirname(f), u);

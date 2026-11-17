@@ -13,6 +13,7 @@ How to change the Silvio Switha site. Version __VERSION__.
 ## Rules for every page
 
 - `<html lang="en-GB">`, a `<title>`, and a `<meta name="description">`.
+- Link preview tags after the description: canonical, og:type, og:site_name, og:locale, og:url, og:title, og:description (110 to 150 characters), og:image (the absolute https URL of `assets/share/silvio-switha-1200x630.jpg`, 1200x630, at most 300 KB), og:image:type, og:image:width, og:image:height, og:image:alt and the twitter:card summary_large_image tags. Copy them from any page and change the URL, title and description. The validator fails a page without them.
 - Keep the word "Version" followed by the version placeholder (two underscores, VERSION, two underscores) in the footer; the build replaces the placeholder.
 - Keep the footer line: "Made with the AgentiCCells site factory; a first version, materials to follow." (update the wording only when Silvio and Dinis agree the site is no longer a first version).
 - No scripts, styles, fonts, images or trackers from other hosts. Plain links to YouTube and Spotify; no embeds. Videos are served from this site.
